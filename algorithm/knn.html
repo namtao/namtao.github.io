@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Decision tree" href="decision_tree.html" />
-    <link rel="prev" title="Định nghĩa" href="introduce.html" />
+    <link rel="prev" title="Lý thuyết" href="theory.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,17 +176,22 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Giải thuật</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduce.html">Định nghĩa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theory.html">Lý thuyết</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">K-Nearest Neighbors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="decision_tree.html">Decision tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="random_forest.html">Random forest</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ada_boost.html">AdaBoost</a></li>
-<li class="toctree-l1"><a class="reference internal" href="xg_boost.html">XGBOOST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../english.html">English</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ada_boost.html">Ada Boost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gradient_boost.html">Gradient Boost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xg_boost.html">XG Boost</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Better Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../better-code/for_while.html">For - While</a></li>
+
+
+
 </ul>
 
     </div>
@@ -2860,6 +2865,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 1 1 0 0 0]
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -2898,6 +2906,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;positive&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -2940,7 +2951,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of classes: 3
-Number of data points: 150
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of data points: 150
 </pre></div>
 </div>
 </div>
@@ -2980,18 +2993,18 @@ Test size    : 50
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Print results for 20 test data points:
-Predicted labels:  [0 0 0 1 1 1 1 2 0 2 2 0 1 2 1 1 0 2 2 2]
-Ground truth    :  [0 0 0 1 1 1 1 1 0 2 2 0 1 2 1 1 0 2 2 2]
-Accuracy of 10NN with major voting: 98.00 %
+Predicted labels:  [2 2 1 1 2 1 0 2 0 1 1 1 0 2 2 0 2 2 0 2]
+Ground truth    :  [2 2 1 1 2 1 0 2 0 1 1 1 0 2 2 0 2 2 0 1]
+Accuracy of 10NN with major voting: 92.00 %
               precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        16
-           1       1.00      0.94      0.97        18
-           2       0.94      1.00      0.97        16
+           0       1.00      1.00      1.00        19
+           1       0.79      0.92      0.85        12
+           2       0.94      0.84      0.89        19
 
-    accuracy                           0.98        50
-   macro avg       0.98      0.98      0.98        50
-weighted avg       0.98      0.98      0.98        50
+    accuracy                           0.92        50
+   macro avg       0.91      0.92      0.91        50
+weighted avg       0.93      0.92      0.92        50
 </pre></div>
 </div>
 </div>
@@ -3008,21 +3021,16 @@ weighted avg       0.98      0.98      0.98        50
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy of 10NN with major voting: 98.00 %
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy of 10NN with major voting: 96.00 %
+              precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        16
-           1       1.00      0.94      0.97        18
-           2       0.94      1.00      0.97        16
+           0       1.00      1.00      1.00        19
+           1       0.92      0.92      0.92        12
+           2       0.95      0.95      0.95        19
 
-    accuracy                           0.98        50
-   macro avg       0.98      0.98      0.98        50
-weighted avg       0.98      0.98      0.98        50
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+    accuracy                           0.96        50
+   macro avg       0.95      0.95      0.95        50
+weighted avg       0.96      0.96      0.96        50
 </pre></div>
 </div>
 </div>
@@ -3042,16 +3050,16 @@ weighted avg       0.98      0.98      0.98        50
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy of 10NN with major voting: 98.00 %
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy of 10NN with major voting: 96.00 %
               precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        16
-           1       1.00      0.94      0.97        18
-           2       0.94      1.00      0.97        16
+           0       1.00      1.00      1.00        19
+           1       0.92      0.92      0.92        12
+           2       0.95      0.95      0.95        19
 
-    accuracy                           0.98        50
-   macro avg       0.98      0.98      0.98        50
-weighted avg       0.98      0.98      0.98        50
+    accuracy                           0.96        50
+   macro avg       0.95      0.95      0.95        50
+weighted avg       0.96      0.96      0.96        50
 </pre></div>
 </div>
 </div>
@@ -3847,31 +3855,31 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <span class="g g-Whitespace">     </span><span class="mi">12</span>                                 <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train_std</span><span class="p">,</span>
 <span class="g g-Whitespace">     </span><span class="mi">13</span>                                 <span class="n">scoring</span> <span class="o">=</span><span class="s1">&#39;r2&#39;</span> <span class="p">,</span> <span class="n">cv</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)))</span>
 
-<span class="nn">File ~\.conda\envs\.env\Lib\site-packages\pandas\core\series.py:1072,</span> in <span class="ni">Series.__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1069</span>     <span class="n">key</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1070</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_rows_with_mask</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1072</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_with</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="nn">File ~\.conda\envs\.env\Lib\site-packages\pandas\core\series.py:1144,</span> in <span class="ni">Series.__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1141</span>     <span class="n">key</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1142</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_rows_with_mask</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1144</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_with</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
-<span class="nn">File ~\.conda\envs\.env\Lib\site-packages\pandas\core\series.py:1082,</span> in <span class="ni">Series._get_with</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1077</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1078</span>         <span class="s2">&quot;Indexing a Series with DataFrame is not &quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1079</span>         <span class="s2">&quot;supported, use the appropriate DataFrame column&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1080</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1081</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1082</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_values_tuple</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1084</span> <span class="k">elif</span> <span class="ow">not</span> <span class="n">is_list_like</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1085</span>     <span class="c1"># e.g. scalars that aren&#39;t recognized by lib.is_scalar, GH#32684</span>
-<span class="g g-Whitespace">   </span><span class="mi">1086</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="nn">File ~\.conda\envs\.env\Lib\site-packages\pandas\core\series.py:1154,</span> in <span class="ni">Series._get_with</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1149</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1150</span>         <span class="s2">&quot;Indexing a Series with DataFrame is not &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1151</span>         <span class="s2">&quot;supported, use the appropriate DataFrame column&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1152</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1153</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1154</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_values_tuple</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1156</span> <span class="k">elif</span> <span class="ow">not</span> <span class="n">is_list_like</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1157</span>     <span class="c1"># e.g. scalars that aren&#39;t recognized by lib.is_scalar, GH#32684</span>
+<span class="g g-Whitespace">   </span><span class="mi">1158</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 
-<span class="nn">File ~\.conda\envs\.env\Lib\site-packages\pandas\core\series.py:1122,</span> in <span class="ni">Series._get_values_tuple</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1117</span> <span class="k">if</span> <span class="n">com</span><span class="o">.</span><span class="n">any_none</span><span class="p">(</span><span class="o">*</span><span class="n">key</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1118</span>     <span class="c1"># mpl compat if we look up e.g. ser[:, np.newaxis];</span>
-<span class="g g-Whitespace">   </span><span class="mi">1119</span>     <span class="c1">#  see tests.series.timeseries.test_mpl_compat_hack</span>
-<span class="g g-Whitespace">   </span><span class="mi">1120</span>     <span class="c1"># the asarray is needed to avoid returning a 2D DatetimeArray</span>
-<span class="g g-Whitespace">   </span><span class="mi">1121</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_values</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
-<span class="ne">-&gt; </span><span class="mi">1122</span>     <span class="n">disallow_ndim_indexing</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1123</span>     <span class="k">return</span> <span class="n">result</span>
-<span class="g g-Whitespace">   </span><span class="mi">1125</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">MultiIndex</span><span class="p">):</span>
+<span class="nn">File ~\.conda\envs\.env\Lib\site-packages\pandas\core\series.py:1194,</span> in <span class="ni">Series._get_values_tuple</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1189</span> <span class="k">if</span> <span class="n">com</span><span class="o">.</span><span class="n">any_none</span><span class="p">(</span><span class="o">*</span><span class="n">key</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="c1"># mpl compat if we look up e.g. ser[:, np.newaxis];</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span>     <span class="c1">#  see tests.series.timeseries.test_mpl_compat_hack</span>
+<span class="g g-Whitespace">   </span><span class="mi">1192</span>     <span class="c1"># the asarray is needed to avoid returning a 2D DatetimeArray</span>
+<span class="g g-Whitespace">   </span><span class="mi">1193</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_values</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+<span class="ne">-&gt; </span><span class="mi">1194</span>     <span class="n">disallow_ndim_indexing</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1195</span>     <span class="k">return</span> <span class="n">result</span>
+<span class="g g-Whitespace">   </span><span class="mi">1197</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">MultiIndex</span><span class="p">):</span>
 
 <span class="nn">File ~\.conda\envs\.env\Lib\site-packages\pandas\core\indexers\utils.py:341,</span> in <span class="ni">disallow_ndim_indexing</span><span class="nt">(result)</span>
 <span class="g g-Whitespace">    </span><span class="mi">333</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
@@ -4388,12 +4396,12 @@ label: Iris-setosa -&gt; predicted: Iris-setosa
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="introduce.html"
+       href="theory.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Định nghĩa</p>
+        <p class="prev-next-title">Lý thuyết</p>
       </div>
     </a>
     <a class="right-next"
@@ -4480,7 +4488,7 @@ By Van Nam Nguyen
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

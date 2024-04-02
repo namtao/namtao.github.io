@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>AdaBoost &#8212; AI DEEP</title>
+    <title>Ada Boost &#8212; AI DEEP</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'algorithm/ada_boost';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="gradient_boost.html" />
+    <link rel="next" title="Gradient Boost" href="gradient_boost.html" />
     <link rel="prev" title="Random forest" href="random_forest.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -176,17 +176,22 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Giải thuật</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduce.html">Định nghĩa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theory.html">Lý thuyết</a></li>
 <li class="toctree-l1"><a class="reference internal" href="knn.html">K-Nearest Neighbors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="decision_tree.html">Decision tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="random_forest.html">Random forest</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">AdaBoost</a></li>
-<li class="toctree-l1"><a class="reference internal" href="xg_boost.html">XGBOOST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../english.html">English</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ada Boost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gradient_boost.html">Gradient Boost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xg_boost.html">XG Boost</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Better Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../better-code/for_while.html">For - While</a></li>
+
+
+
 </ul>
 
     </div>
@@ -372,7 +377,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>AdaBoost</h1>
+    <h1>Ada Boost</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -395,13 +400,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="adaboost">
-<h1>AdaBoost<a class="headerlink" href="#adaboost" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ada-boost">
+<h1>Ada Boost<a class="headerlink" href="#ada-boost" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Tạo ra cây Strump có độ sâu = 1</p></li>
 <li><p>Chọn 1 feature tốt nhất</p></li>
 <li><p>Học dựa trên lỗi sai</p></li>
 <li><p>Khuếch đại feature sai lên để tăng xác xuất từ các lần trước đó</p></li>
+<li><p>Lấy kết quả sai số từ lần huấn luyện n-1 để làm bộ dữ liệu mới trong lần huấn luyên thứ n.</p></li>
+<li><p>Các lần huấn luyện dựa trên cùng 1 loại giải thuật</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -903,7 +910,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/059e36dca496c32cd1d15ea036a66aada5ad989d8a390d32eaf081899be98ea9.svg" src="../_images/059e36dca496c32cd1d15ea036a66aada5ad989d8a390d32eaf081899be98ea9.svg" /></div>
+<img alt="../_images/876647f1dc6784e042574dd585546d33639ecccd80673ab620bbd49e8542fcf6.svg" src="../_images/876647f1dc6784e042574dd585546d33639ecccd80673ab620bbd49e8542fcf6.svg" /></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -932,7 +939,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bda6b91d386a9d3352f2f00640cc4c0b862684589371a0360a528d62234e5bd7.svg" src="../_images/bda6b91d386a9d3352f2f00640cc4c0b862684589371a0360a528d62234e5bd7.svg" /></div>
+<img alt="../_images/471249d99f110755b2d68220ade95330d6359ae2638930a22529ad055715e234.svg" src="../_images/471249d99f110755b2d68220ade95330d6359ae2638930a22529ad055715e234.svg" /></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -961,7 +968,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/60155964efd97e146a146f97f3e76a0fd10d5f1e9b268f19024bae3186131919.svg" src="../_images/60155964efd97e146a146f97f3e76a0fd10d5f1e9b268f19024bae3186131919.svg" /></div>
+<img alt="../_images/2fdd7a00a1c0cc7e91b2d35be54c21e2296c88d2c1e3e46d5b958ce488253bd6.svg" src="../_images/2fdd7a00a1c0cc7e91b2d35be54c21e2296c88d2c1e3e46d5b958ce488253bd6.svg" /></div>
 </div>
 <section id="theory">
 <h2>Theory<a class="headerlink" href="#theory" title="Link to this heading">#</a></h2>
@@ -1249,7 +1256,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Gradient Boost</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1295,7 +1302,7 @@ By Van Nam Nguyen
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

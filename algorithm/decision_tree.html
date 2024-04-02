@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -178,17 +178,22 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Giải thuật</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduce.html">Định nghĩa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theory.html">Lý thuyết</a></li>
 <li class="toctree-l1"><a class="reference internal" href="knn.html">K-Nearest Neighbors</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Decision tree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="random_forest.html">Random forest</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ada_boost.html">AdaBoost</a></li>
-<li class="toctree-l1"><a class="reference internal" href="xg_boost.html">XGBOOST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../english.html">English</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ada_boost.html">Ada Boost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gradient_boost.html">Gradient Boost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xg_boost.html">XG Boost</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Better Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../better-code/for_while.html">For - While</a></li>
+
+
+
 </ul>
 
     </div>
@@ -407,6 +412,7 @@ document.write(`
 <li><p>Phân nhánh dữ liệu thành các nhánh đến khi gặp một điều kiện nào đó</p></li>
 <li><p>Khắc phục nhược điểm của KNN là tốn nhiều thời gian đối với dữ liệu lớn</p></li>
 <li><p>Purity: dataset thuần khiết, kết quả chỉ thuộc về 1 lớp</p></li>
+<li><p>Dựa trên chỉ số Gini để xây dựng cây quyết định, để tránh trường hợp bị overfitting thì ta cần quy định giới hạn dừng khi xây dựng cây hoặc có thể pruning để hạn chế overfitting</p></li>
 </ul>
 <section id="root-node">
 <h2>Root Node<a class="headerlink" href="#root-node" title="Link to this heading">#</a></h2>
@@ -622,7 +628,7 @@ The selected attiribute is:  age
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5fffae23a54b2359aa07d3a6be7b55b81d523bac51bf2130888be8422da30f01.png" src="../_images/5fffae23a54b2359aa07d3a6be7b55b81d523bac51bf2130888be8422da30f01.png" />
+<img alt="../_images/b1a9d566ef3efa55e35728cd96d08e68d2efd0d544eaf854d9bd6a067c852f42.png" src="../_images/b1a9d566ef3efa55e35728cd96d08e68d2efd0d544eaf854d9bd6a067c852f42.png" />
 </div>
 </div>
 </section>
@@ -3037,7 +3043,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1a1e6d5bc20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x277575d11c0&gt;
 </pre></div>
 </div>
 <img alt="../_images/f84cab601bc7559f657372240da0cc079cf7828a09d63577407d6fa18335c7fc.png" src="../_images/f84cab601bc7559f657372240da0cc079cf7828a09d63577407d6fa18335c7fc.png" />
@@ -3809,7 +3815,7 @@ By Van Nam Nguyen
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

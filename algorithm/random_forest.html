@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -62,7 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'algorithm/random_forest';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="AdaBoost" href="ada_boost.html" />
+    <link rel="next" title="Ada Boost" href="ada_boost.html" />
     <link rel="prev" title="Decision tree" href="decision_tree.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -178,17 +178,22 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Giải thuật</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduce.html">Định nghĩa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theory.html">Lý thuyết</a></li>
 <li class="toctree-l1"><a class="reference internal" href="knn.html">K-Nearest Neighbors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="decision_tree.html">Decision tree</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Random forest</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ada_boost.html">AdaBoost</a></li>
-<li class="toctree-l1"><a class="reference internal" href="xg_boost.html">XGBOOST</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../english.html">English</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ada_boost.html">Ada Boost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gradient_boost.html">Gradient Boost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xg_boost.html">XG Boost</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Better Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../better-code/for_while.html">For - While</a></li>
+
+
+
 </ul>
 
     </div>
@@ -422,19 +427,18 @@ document.write(`
 <li><p>Xây dựng N tree song song như trên</p></li>
 </ul>
 </li>
-<li><p>Out of bag error</p></li>
 </ul>
 <section id="tai-sao-thuat-toan-random-forest-tot">
 <h2>Tại sao thuật toán Random Forest tốt?<a class="headerlink" href="#tai-sao-thuat-toan-random-forest-tot" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Trong thuật toán Decision Tree, khi xây dựng cây quyết định nếu để độ sâu tùy ý thì cây sẽ phân loại đúng hết các dữ liệu trong tập training dẫn đến mô hình có thể dự đoán tệ trên tập validation/test, khi đó mô hình bị overfitting, hay nói cách khác là mô hình có high variance.</p></li>
 </ul>
-<p><a class="reference external" href="https://machinelearningcoban.com/tabml_book/ch_model/random_forest.html">Tham khảo</a></p>
+<p>[Tham khảo]</p>
 </section>
 <section id="random-forest-with-missing-data">
 <h2>Random forest with missing data<a class="headerlink" href="#random-forest-with-missing-data" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Khởi tạo giá trị bàn đầu bằng trung bình, trung vị, voting của các sample để điền vào data missing</p></li>
+<li><p>Khởi tạo giá trị ban đầu bằng trung bình, trung vị, voting của các sample để điền vào data missing</p></li>
 <li><p>Proximity matrix: để xác định số cây dự đoán giống nhau</p></li>
 </ul>
 <div class="cell docutils container">
@@ -955,7 +959,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1])
 </pre></div>
 </div>
 </div>
@@ -970,7 +974,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/56f403db7f1b5a3c57fdad143e1a80e99773cba125cbeafde2f06cebee126c37.png" src="../_images/56f403db7f1b5a3c57fdad143e1a80e99773cba125cbeafde2f06cebee126c37.png" />
+<img alt="../_images/13f28439d3075ee7bdc74fce0320106fe468310d0feb3ccf576b8d46e04b5c9c.png" src="../_images/13f28439d3075ee7bdc74fce0320106fe468310d0feb3ccf576b8d46e04b5c9c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -987,7 +991,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e580c40b019caae9e58231b112d8583c5a27a387364d4c14a9d5323bf5ef3bc8.svg" src="../_images/e580c40b019caae9e58231b112d8583c5a27a387364d4c14a9d5323bf5ef3bc8.svg" /></div>
+<img alt="../_images/6f7293d43fb52cdb33dcc81c01a7a336aae30c510271b532438b51f00470d92f.svg" src="../_images/6f7293d43fb52cdb33dcc81c01a7a336aae30c510271b532438b51f00470d92f.svg" /></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -999,7 +1003,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/babce7663dd73d7f17a79f40ff2c782ce7174eec6d32fac901793ccef40c3ab1.png" src="../_images/babce7663dd73d7f17a79f40ff2c782ce7174eec6d32fac901793ccef40c3ab1.png" />
+<img alt="../_images/15bf8aededaf9bbb9b427860df8e2a9df5125db03cb61432ab27f46fb8221ce3.png" src="../_images/15bf8aededaf9bbb9b427860df8e2a9df5125db03cb61432ab27f46fb8221ce3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1016,7 +1020,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6c45ab0cf22d5676c5a1a5ac4ea058f286e8df28f8cd5f097fa5e04ddf1f0a42.svg" src="../_images/6c45ab0cf22d5676c5a1a5ac4ea058f286e8df28f8cd5f097fa5e04ddf1f0a42.svg" /></div>
+<img alt="../_images/e34a634312aec9c1b0610d2f989a797ff23cd9666048e5a743df8d22b9f41e42.svg" src="../_images/e34a634312aec9c1b0610d2f989a797ff23cd9666048e5a743df8d22b9f41e42.svg" /></div>
 </div>
 </section>
 <section id="random-forest-for-regression">
@@ -1582,7 +1586,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([59.33939394,  0.        ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([39.66666667,  0.        ])
 </pre></div>
 </div>
 </div>
@@ -1597,7 +1601,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/449ffd8c7ac785980ac840a2b228b84b6b229441e958f069146e09da92039114.png" src="../_images/449ffd8c7ac785980ac840a2b228b84b6b229441e958f069146e09da92039114.png" />
+<img alt="../_images/8cf8ce9de018316b64d1dcf9a0bab9c7e2185ad2fae68b932c1ff7392db6f9bc.png" src="../_images/8cf8ce9de018316b64d1dcf9a0bab9c7e2185ad2fae68b932c1ff7392db6f9bc.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1623,7 +1627,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f2f0e4dc2ac2cbc74ca67694e249780074bdb880f3da16e98ac6aa379728e816.png" src="../_images/f2f0e4dc2ac2cbc74ca67694e249780074bdb880f3da16e98ac6aa379728e816.png" />
+<img alt="../_images/e4b1ab4a0ba162f03359f09dff832e0637b5e3f93ebcd54b64d131c7a0e1fba2.png" src="../_images/e4b1ab4a0ba162f03359f09dff832e0637b5e3f93ebcd54b64d131c7a0e1fba2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1651,7 +1655,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/223bf6f6f75198f258b5c112b005cd3fa265cbd199a406d2f12a95011736768e.png" src="../_images/223bf6f6f75198f258b5c112b005cd3fa265cbd199a406d2f12a95011736768e.png" />
+<img alt="../_images/46c724ff59948945416ca5859640ba3e5ecdb1dbc85e6361fbe28f73c0716e81.png" src="../_images/46c724ff59948945416ca5859640ba3e5ecdb1dbc85e6361fbe28f73c0716e81.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2473,7 +2477,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6d095cfd661803495b24d768a466c46ced88b4d59199712a06c7dbe0293b3363.svg" src="../_images/6d095cfd661803495b24d768a466c46ced88b4d59199712a06c7dbe0293b3363.svg" /></div>
+<img alt="../_images/6a803c4aedaa3515870e743d4df1403f9c32ab52eae0b03399092d25aa1670dd.svg" src="../_images/6a803c4aedaa3515870e743d4df1403f9c32ab52eae0b03399092d25aa1670dd.svg" /></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2505,7 +2509,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e0adbeb93a31ed7b29599a1f66852c1f9a291d6c23466ea797aba20cf7d5205b.svg" src="../_images/e0adbeb93a31ed7b29599a1f66852c1f9a291d6c23466ea797aba20cf7d5205b.svg" /></div>
+<img alt="../_images/3b9bc451a9c9d9f05b00d00f6bfba0468c28ebd6a4e2f0cb4cb7e285e83272c4.svg" src="../_images/3b9bc451a9c9d9f05b00d00f6bfba0468c28ebd6a4e2f0cb4cb7e285e83272c4.svg" /></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2537,7 +2541,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/29897e49717a4245c25cf1f08765698780800bbb71f21672c9e701912a64549e.svg" src="../_images/29897e49717a4245c25cf1f08765698780800bbb71f21672c9e701912a64549e.svg" /></div>
+<img alt="../_images/b58ac2ee3de132c59e4e2e02fb416712297e75391aa8ea6eeefc0551f4e99896.svg" src="../_images/b58ac2ee3de132c59e4e2e02fb416712297e75391aa8ea6eeefc0551f4e99896.svg" /></div>
 </div>
 </section>
 </section>
@@ -2586,7 +2590,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">AdaBoost</p>
+        <p class="prev-next-title">Ada Boost</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2634,7 +2638,7 @@ By Van Nam Nguyen
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>
