@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'better-code/for_while';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Numpy &amp; Pandas" href="numpy_pandas.html" />
     <link rel="prev" title="XG Boost" href="../algorithm/xg_boost.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -188,9 +189,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Better Code</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">For - While</a></li>
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="numpy_pandas.html">Numpy &amp; Pandas</a></li>
 </ul>
 
     </div>
@@ -386,36 +385,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">For - While</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1">Q1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q2">Q2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q3">Q3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q4">Q4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q5">Q5</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q6">Q6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-01">Exercise 01</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-02">Exercise 02</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-03">Exercise 03</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ex-02">Ex 02</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Q1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Q2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Q3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Q4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Q5</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Q6</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q7">Q7</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q8">Q8</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q9">Q9</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q10">Q10</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q11">Q11</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ex-03">Ex 03</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Q1</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Q2</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -428,8 +401,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="for-while">
 <h1>For - While<a class="headerlink" href="#for-while" title="Link to this heading">#</a></h1>
-<section id="q1">
-<h2>Q1<a class="headerlink" href="#q1" title="Link to this heading">#</a></h2>
+<section id="exercise-01">
+<h2>Exercise 01<a class="headerlink" href="#exercise-01" title="Link to this heading">#</a></h2>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Viết chương trình nhập vào một số thực. Đơn vị tính cho số này là centimet (cm). 
+Hãy in ra số tương đương tính bằng foot (số thực, có 2 số lẻ thập phân) và inch (số thực, có 2 số lẻ thập phân). 
+Với 1 inch = 2.54 cm và 1 foot = 12 inches.
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">500</span>
@@ -445,9 +423,10 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="q2">
-<h2>Q2<a class="headerlink" href="#q2" title="Link to this heading">#</a></h2>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Viết chương trình nhập vào số giây từ 0 tới 68399, đổi số giây này thành dạng [giờ:phút:giây], mỗi thành phần là một số nguyên có 2 chữ số.
+Ví dụ: 02:11:05
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span> <span class="mi">3600</span>
@@ -465,9 +444,14 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="q3">
-<h2>Q3<a class="headerlink" href="#q3" title="Link to this heading">#</a></h2>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Viết chương trình nhập vào 4 số nguyên.
+Hiển thị ra số lớn nhất và nhỏ nhất
+Ví dụ:
+nhập vào 4 số 1,2,3,4 thì kết quả là:
+Số lớn nhất là: 4
+Số nhỏ nhất là: 1
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
@@ -484,9 +468,11 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="q4">
-<h2>Q4<a class="headerlink" href="#q4" title="Link to this heading">#</a></h2>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Nhập vào hai số tự nhiên a và b. Tính hiệu của hai số đó.
+Nếu hiệu số lớn hơn 0 thì in ra dòng chữ [Số thứ nhất lớn hơn số thứ hai].
+Nếu hiệu số nhỏ hơn 0 thì in ra dòng chữ [Số thứ nhất nhỏ hơn số thứ hai].
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
@@ -504,9 +490,9 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="q5">
-<h2>Q5<a class="headerlink" href="#q5" title="Link to this heading">#</a></h2>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Nhập vào 2 số tự nhiên a và b. Kiểm tra xem a có chia hết cho b không
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
@@ -522,9 +508,22 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="q6">
-<h2>Q6<a class="headerlink" href="#q6" title="Link to this heading">#</a></h2>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Xếp loại sinh viên theo các quy luật dưới đây:
+-	Nếu điểm &gt;= 9.0 - Loại xuất sắc
+-	Nếu 8.0&lt;= điểm &lt; 9.0 - Loại giỏi
+-	Nếu 7.0&lt;= điểm &lt; 8.0 - Loại khá
+
+-	Nếu 6.0 &lt;= điểm &lt; 7.0 - Loại trung bình khá
+-	Nếu 5.0 &lt;= điểm &lt; 6.0 - Loại trung bình
+-	Nếu điểm &lt; 5.0 - Loại kém
+Với điểm = ( (điểm toán)*2 + điểm lý + điểm hóa )/4
+Viết Chương trình:
+a. Nhập vào điểm 3 môn học
+b. Tính điểm trung bình
+c. Xác định học lực của học sinh dựa trên điểm trung bình
+d. Hiển thị học lực của học sinh
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">toan</span> <span class="o">=</span> <span class="mi">3</span>
@@ -559,11 +558,12 @@ Trung bình
 </div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="ex-02">
-<h1>Ex 02<a class="headerlink" href="#ex-02" title="Link to this heading">#</a></h1>
-<section id="id1">
-<h2>Q1<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="exercise-02">
+<h2>Exercise 02<a class="headerlink" href="#exercise-02" title="Link to this heading">#</a></h2>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Hãy viết chương trình tính tổng các chữ số của một số nguyên bất kỳ.
+Ví dụ: Số 8545604 có tổng các chữ số là: 8+5+4+5+6+0+4= 32
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span><span class="mi">24357643584</span>
@@ -580,9 +580,10 @@ Trung bình
 </div>
 </div>
 </div>
-</section>
-<section id="id2">
-<h2>Q2<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Viết chương trình phân tích một số nguyên thành các thừa số nguyên tố
+Ví dụ: Số 28 được phân tích thành 2 x 2 x 7
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_Nguyen_To</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -627,9 +628,9 @@ Trung bình
 </div>
 </div>
 </div>
-</section>
-<section id="id3">
-<h2>Q3<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Viết chương trình liệt kê tất cả các số nguyên tố nhỏ hơn n cho trước.
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
@@ -648,9 +649,9 @@ Trung bình
 </div>
 </div>
 </div>
-</section>
-<section id="id4">
-<h2>Q4<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Viết chương trình liệt kê n số nguyên tố đầu tiên.
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
@@ -675,9 +676,9 @@ Trung bình
 </div>
 </div>
 </div>
-</section>
-<section id="id5">
-<h2>Q5<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Viết chương trình tìm ước số chung lớn nhất, bội số chung nhỏ nhất của hai số tự nhiên a và b.
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
@@ -714,9 +715,13 @@ BCNN của 5 và 11 là 55
 </div>
 </div>
 </div>
-</section>
-<section id="id6">
-<h2>Q6<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Dãy số Fibonacci được định nghĩa như sau:
+
+F0 =1, F1 = 1; Fn = Fn-1 + Fn-2 với n&gt;=2.
+
+Hãy viết chương trình tìm số Fibonacci thứ n
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
@@ -736,9 +741,10 @@ BCNN của 5 và 11 là 55
 </div>
 </div>
 </div>
-</section>
-<section id="q7">
-<h2>Q7<a class="headerlink" href="#q7" title="Link to this heading">#</a></h2>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Nhập một số tự nhiên n.
+Hãy liệt kê các số Fibonaci nhỏ hơn n là số nguyên tố
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">2432</span>
@@ -776,9 +782,11 @@ BCNN của 5 và 11 là 55
 </div>
 </div>
 </div>
-</section>
-<section id="q8">
-<h2>Q8<a class="headerlink" href="#q8" title="Link to this heading">#</a></h2>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Viết chương trình nhập một số nguyên dương n và thực hiện các chức năng sau:
+a) Tính tổng các chữ số của n.
+b) Phân tích n thành các thừa số nguyên tố.
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_Nguyen_To</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -825,9 +833,11 @@ Tổng các chữ số 36 là : 9
 </div>
 </div>
 </div>
-</section>
-<section id="q9">
-<h2>Q9<a class="headerlink" href="#q9" title="Link to this heading">#</a></h2>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Viết chương trình nhập một số nguyên dương n và thực hiện các chức năng sau:
+a) Liệt kê các ước số của n. Có bao nhiêu ước số.
+b) Liệt kê các ước số là nguyên tố của n.
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">499</span>
@@ -850,9 +860,9 @@ Có 2 ước số
 </div>
 </div>
 </div>
-</section>
-<section id="q10">
-<h2>Q10<a class="headerlink" href="#q10" title="Link to this heading">#</a></h2>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Viết chương trình thực hiện chuẩn hoá một xâu ký tự nhập từ bàn phím (loại bỏ các dấu cách thừa, chuyển ký tự đầu mỗi từ thành chữ hoa, các ký tự khác thành chữ thường)
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span><span class="s2">&quot;tôi     TêN            là             ...&quot;</span>
@@ -867,9 +877,12 @@ Có 2 ước số
 </div>
 </div>
 </div>
-</section>
-<section id="q11">
-<h2>Q11<a class="headerlink" href="#q11" title="Link to this heading">#</a></h2>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Viết chương trình thực hiện nhập một xâu ký tự
+a) Tìm từ dài nhất trong xâu đó.
+b) Từ đó xuất hiện ở vị trí nào?
+(Chú ý. nếu có nhiều từ có độ dài giống nhau thì chọn từ đầu tiên tìm thấy).
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Viết chương trình thực hiện nhập một xây ký tự&quot;</span>
@@ -895,11 +908,11 @@ Có 2 ước số
 </div>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="ex-03">
-<h1>Ex 03<a class="headerlink" href="#ex-03" title="Link to this heading">#</a></h1>
-<section id="id7">
-<h2>Q1<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<section id="exercise-03">
+<h2>Exercise 03<a class="headerlink" href="#exercise-03" title="Link to this heading">#</a></h2>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Sử dụng for, while, do while để cho ra kết quả
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">8</span>
@@ -990,10 +1003,9 @@ Có 2 ước số
 </div>
 </div>
 </div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="id8">
-<h1>Q2<a class="headerlink" href="#id8" title="Link to this heading">#</a></h1>
+<div class="highlight-Question notranslate"><div class="highlight"><pre><span></span>Viết chương trình tính n! với n là số tự nhiên không âm nhập vào từ bàn phím. Trong đó: 0! = 1 n! = 1.2.3...n
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">giai_thua</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -1012,6 +1024,7 @@ Có 2 ước số
 </div>
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1053,6 +1066,15 @@ Có 2 ước số
         <p class="prev-next-title">XG Boost</p>
       </div>
     </a>
+    <a class="right-next"
+       href="numpy_pandas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Numpy &amp; Pandas</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1069,36 +1091,10 @@ Có 2 ước số
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">For - While</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1">Q1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q2">Q2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q3">Q3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q4">Q4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q5">Q5</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q6">Q6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-01">Exercise 01</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-02">Exercise 02</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-03">Exercise 03</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ex-02">Ex 02</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Q1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Q2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Q3</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Q4</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Q5</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Q6</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q7">Q7</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q8">Q8</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q9">Q9</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q10">Q10</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q11">Q11</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ex-03">Ex 03</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Q1</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Q2</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
@@ -1122,7 +1118,7 @@ By Van Nam Nguyen
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2023.
       <br/>
     
   </p>
