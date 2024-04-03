@@ -2863,9 +2863,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 1 1 0 0 0]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 </section>
@@ -2904,6 +2901,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;positive&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -2946,7 +2946,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of classes: 3
-Number of data points: 150
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of data points: 150
 </pre></div>
 </div>
 </div>
@@ -2986,20 +2988,18 @@ Test size    : 50
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Print results for 20 test data points:
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Predicted labels:  [2 1 2 2 0 0 1 1 0 0 1 1 1 2 1 1 1 1 0 1]
-Ground truth    :  [2 1 2 2 0 0 1 1 0 0 1 1 1 2 1 1 1 1 0 1]
-Accuracy of 10NN with major voting: 96.00 %
+Predicted labels:  [0 2 0 2 1 1 0 0 1 2 1 2 1 2 2 2 1 1 0 1]
+Ground truth    :  [0 2 0 2 1 1 0 0 1 2 1 2 1 2 2 2 1 1 0 1]
+Accuracy of 10NN with major voting: 98.00 %
               precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        10
-           1       0.96      0.96      0.96        24
-           2       0.94      0.94      0.94        16
+           0       1.00      1.00      1.00        16
+           1       1.00      0.94      0.97        17
+           2       0.94      1.00      0.97        17
 
-    accuracy                           0.96        50
-   macro avg       0.97      0.97      0.97        50
-weighted avg       0.96      0.96      0.96        50
+    accuracy                           0.98        50
+   macro avg       0.98      0.98      0.98        50
+weighted avg       0.98      0.98      0.98        50
 </pre></div>
 </div>
 </div>
@@ -3017,14 +3017,16 @@ weighted avg       0.96      0.96      0.96        50
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy of 10NN with major voting: 98.00 %
-              precision    recall  f1-score   support
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        10
-           1       1.00      0.96      0.98        24
-           2       0.94      1.00      0.97        16
+           0       1.00      1.00      1.00        16
+           1       1.00      0.94      0.97        17
+           2       0.94      1.00      0.97        17
 
     accuracy                           0.98        50
-   macro avg       0.98      0.99      0.98        50
+   macro avg       0.98      0.98      0.98        50
 weighted avg       0.98      0.98      0.98        50
 </pre></div>
 </div>
@@ -3046,20 +3048,15 @@ weighted avg       0.98      0.98      0.98        50
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy of 10NN with major voting: 98.00 %
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+              precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        10
-           1       1.00      0.96      0.98        24
-           2       0.94      1.00      0.97        16
+           0       1.00      1.00      1.00        16
+           1       1.00      0.94      0.97        17
+           2       0.94      1.00      0.97        17
 
     accuracy                           0.98        50
-   macro avg       0.98      0.99      0.98        50
+   macro avg       0.98      0.98      0.98        50
 weighted avg       0.98      0.98      0.98        50
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -3230,10 +3227,7 @@ weighted avg       0.98      0.98      0.98        50
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimum error:-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0.615 at K = 37
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimum error:- 0.615 at K = 37
 </pre></div>
 </div>
 <img alt="../_images/75b41bca0f4e9889aaebae05cca4944c9afa75380a1b5c340e315258185054be.png" src="../_images/75b41bca0f4e9889aaebae05cca4944c9afa75380a1b5c340e315258185054be.png" />

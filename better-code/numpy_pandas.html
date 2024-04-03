@@ -923,10 +923,10 @@ array rong
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>126.03569030761719
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>118.05367469787598
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>46.98348045349121
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37.92119026184082
 [      0       2       4 ... 1999994 1999996 1999998]
 </pre></div>
 </div>
@@ -4195,18 +4195,18 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\vanna\AppData\Local\Temp\ipykernel_13412\56819179.py:3: FutureWarning: The provided callable &lt;built-in function max&gt; is currently using SeriesGroupBy.max. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;max&quot; instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\vanna\AppData\Local\Temp\ipykernel_16528\56819179.py:3: FutureWarning: The provided callable &lt;built-in function max&gt; is currently using SeriesGroupBy.max. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;max&quot; instead.
   stocks1[&#39;high&#39;].fillna(stocks1.groupby([&#39;symbol&#39;])[&#39;high&#39;].transform(max), inplace =True)
-C:\Users\vanna\AppData\Local\Temp\ipykernel_13412\56819179.py:3: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+C:\Users\vanna\AppData\Local\Temp\ipykernel_16528\56819179.py:3: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
 The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
 
 For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
 
 
   stocks1[&#39;high&#39;].fillna(stocks1.groupby([&#39;symbol&#39;])[&#39;high&#39;].transform(max), inplace =True)
-C:\Users\vanna\AppData\Local\Temp\ipykernel_13412\56819179.py:4: FutureWarning: The provided callable &lt;built-in function max&gt; is currently using SeriesGroupBy.max. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;max&quot; instead.
+C:\Users\vanna\AppData\Local\Temp\ipykernel_16528\56819179.py:4: FutureWarning: The provided callable &lt;built-in function max&gt; is currently using SeriesGroupBy.max. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;max&quot; instead.
   stocks1[&#39;low&#39;].fillna(stocks1.groupby([&#39;symbol&#39;])[&#39;low&#39;].transform(max), inplace =True)
-C:\Users\vanna\AppData\Local\Temp\ipykernel_13412\56819179.py:4: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+C:\Users\vanna\AppData\Local\Temp\ipykernel_16528\56819179.py:4: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
 The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
 
 For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
@@ -4836,7 +4836,7 @@ For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime64[ns]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\vanna\AppData\Local\Temp\ipykernel_13412\3755393545.py:3: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\vanna\AppData\Local\Temp\ipykernel_16528\3755393545.py:3: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
   stocks_companies[&#39;parsed_time&#39;] = pd.to_datetime(stocks_companies[&#39;date&#39;])
 </pre></div>
 </div>
@@ -5980,7 +5980,7 @@ Name: genres, dtype: bool
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\(&#39;
 &lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\(&#39;
-C:\Users\vanna\AppData\Local\Temp\ipykernel_13412\1898930675.py:3: SyntaxWarning: invalid escape sequence &#39;\(&#39;
+C:\Users\vanna\AppData\Local\Temp\ipykernel_16528\1898930675.py:3: SyntaxWarning: invalid escape sequence &#39;\(&#39;
   movies[&#39;year&#39;] = movies[&#39;title&#39;].str.extract(&#39;.*\((.*)\).*&#39;, expand = True)
 </pre></div>
 </div>
