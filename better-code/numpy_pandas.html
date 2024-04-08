@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'better-code/numpy_pandas';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="For - While" href="for_while.html" />
+    <link rel="prev" title="List Set Dictionary" href="list_set_dict.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -188,6 +188,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Better Code</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="for_while.html">For - While</a></li>
+<li class="toctree-l1"><a class="reference internal" href="list_set_dict.html">List Set Dictionary</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Numpy &amp; Pandas</a></li>
 </ul>
 
@@ -230,53 +231,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/namtao/namtao.github.io" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/namtao/namtao.github.io/issues/new?title=Issue%20on%20page%20%2Fbetter-code/numpy_pandas.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
 
 
 
@@ -517,14 +471,14 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># doc file txt va chuyen thanh mang np</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../source/heights_1.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../sources/heights_1.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
   <span class="n">heights</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
 <span class="n">np_heights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
 <span class="n">np_heights</span> <span class="o">=</span> <span class="n">np_heights</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np_heights</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np_heights</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../source/weights_1.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../sources/weights_1.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
   <span class="n">weights_1</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
 <span class="n">np_weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">weights_1</span><span class="p">)</span>
 <span class="n">np_weights</span> <span class="o">=</span> <span class="n">np_weights</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
@@ -851,11 +805,11 @@ array rong
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../source/heights.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../sources/heights.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
   <span class="n">heights</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
 
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../source/positions.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../sources/positions.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
   <span class="n">positions</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;]&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
 
 <span class="c1"># print(positions)</span>
@@ -923,11 +877,13 @@ array rong
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>118.05367469787598
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>138.51070404052734
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37.92119026184082
-[      0       2       4 ... 1999994 1999996 1999998]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43.58363151550293
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[      0       2       4 ... 1999994 1999996 1999998]
 </pre></div>
 </div>
 </div>
@@ -947,7 +903,7 @@ array rong
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># numpy doc du lieu tu csv</span>
 
-<span class="n">wines</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s2">&quot;../source/winequality-red.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span> <span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="n">skip_header</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">wines</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s2">&quot;../sources/winequality-red.csv&quot;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span> <span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="n">skip_header</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">wines</span><span class="p">,</span> <span class="n">wines</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">wines</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
 </pre></div>
@@ -2121,7 +2077,7 @@ Name: count, dtype: int64
 <h4>Ex3<a class="headerlink" href="#ex3" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">euro12</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../source/euro2012.csv&#39;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">euro12</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../sources/euro2012.csv&#39;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">euro12</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">euro12</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -3626,7 +3582,7 @@ Name: Goals, dtype: int64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># group by</span>
 
-<span class="n">drinks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../source/drinks.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">drinks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../sources/drinks.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">drinks</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -4013,8 +3969,8 @@ Name: beer_servings, dtype: float64
 <h4>Ex2<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stocks1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../source/stocks1.csv&#39;</span><span class="p">)</span>
-<span class="n">stocks2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../source/stocks2.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stocks1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../sources/stocks1.csv&#39;</span><span class="p">)</span>
+<span class="n">stocks2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../sources/stocks2.csv&#39;</span><span class="p">)</span>
 
 <span class="n">stocks1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="n">stocks2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -4195,18 +4151,18 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\vanna\AppData\Local\Temp\ipykernel_16528\56819179.py:3: FutureWarning: The provided callable &lt;built-in function max&gt; is currently using SeriesGroupBy.max. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;max&quot; instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\vanna\AppData\Local\Temp\ipykernel_18144\56819179.py:3: FutureWarning: The provided callable &lt;built-in function max&gt; is currently using SeriesGroupBy.max. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;max&quot; instead.
   stocks1[&#39;high&#39;].fillna(stocks1.groupby([&#39;symbol&#39;])[&#39;high&#39;].transform(max), inplace =True)
-C:\Users\vanna\AppData\Local\Temp\ipykernel_16528\56819179.py:3: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+C:\Users\vanna\AppData\Local\Temp\ipykernel_18144\56819179.py:3: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
 The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
 
 For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
 
 
   stocks1[&#39;high&#39;].fillna(stocks1.groupby([&#39;symbol&#39;])[&#39;high&#39;].transform(max), inplace =True)
-C:\Users\vanna\AppData\Local\Temp\ipykernel_16528\56819179.py:4: FutureWarning: The provided callable &lt;built-in function max&gt; is currently using SeriesGroupBy.max. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;max&quot; instead.
+C:\Users\vanna\AppData\Local\Temp\ipykernel_18144\56819179.py:4: FutureWarning: The provided callable &lt;built-in function max&gt; is currently using SeriesGroupBy.max. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string &quot;max&quot; instead.
   stocks1[&#39;low&#39;].fillna(stocks1.groupby([&#39;symbol&#39;])[&#39;low&#39;].transform(max), inplace =True)
-C:\Users\vanna\AppData\Local\Temp\ipykernel_16528\56819179.py:4: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+C:\Users\vanna\AppData\Local\Temp\ipykernel_18144\56819179.py:4: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
 The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
 
 For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
@@ -4472,7 +4428,7 @@ For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># gop stocks va companies</span>
 
-<span class="n">companies</span> <span class="o">=</span> <span class="n">stocks1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../source/companies.csv&#39;</span><span class="p">)</span>
+<span class="n">companies</span> <span class="o">=</span> <span class="n">stocks1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../sources/companies.csv&#39;</span><span class="p">)</span>
 
 <span class="n">stocks_companies</span> <span class="o">=</span> <span class="n">stocks</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">companies</span><span class="p">,</span> <span class="n">left_on</span> <span class="o">=</span> <span class="s1">&#39;symbol&#39;</span><span class="p">,</span> <span class="n">right_on</span> <span class="o">=</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;inner&#39;</span><span class="p">)</span>
 
@@ -4836,7 +4792,7 @@ For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime64[ns]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\vanna\AppData\Local\Temp\ipykernel_16528\3755393545.py:3: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\vanna\AppData\Local\Temp\ipykernel_18144\3755393545.py:3: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
   stocks_companies[&#39;parsed_time&#39;] = pd.to_datetime(stocks_companies[&#39;date&#39;])
 </pre></div>
 </div>
@@ -5087,9 +5043,9 @@ For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using
 <h4>Ex3<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../source/movies.csv&#39;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
-<span class="n">tags</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../source/tags.csv&#39;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
-<span class="n">ratings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../source/ratings.csv&#39;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">movies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../sources/movies.csv&#39;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="n">tags</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../sources/tags.csv&#39;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="n">ratings</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../sources/ratings.csv&#39;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
 
 <span class="n">movies</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -5980,7 +5936,7 @@ Name: genres, dtype: bool
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\(&#39;
 &lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\(&#39;
-C:\Users\vanna\AppData\Local\Temp\ipykernel_16528\1898930675.py:3: SyntaxWarning: invalid escape sequence &#39;\(&#39;
+C:\Users\vanna\AppData\Local\Temp\ipykernel_18144\1898930675.py:3: SyntaxWarning: invalid escape sequence &#39;\(&#39;
   movies[&#39;year&#39;] = movies[&#39;title&#39;].str.extract(&#39;.*\((.*)\).*&#39;, expand = True)
 </pre></div>
 </div>
@@ -7055,7 +7011,7 @@ Length: 105, dtype: int64
 <h4>Ex4<a class="headerlink" href="#ex4" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../source/chipotle.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../sources/chipotle.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
@@ -8132,7 +8088,7 @@ operable program or batch file.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class="w"> </span>pdf<span class="w"> </span><span class="s1">&#39;../source/numpy_pandas.ipynb&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class="w"> </span>pdf<span class="w"> </span><span class="s1">&#39;../sources/numpy_pandas.ipynb&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -8329,7 +8285,7 @@ Examples
 To see all available configurables, use `--help-all`.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[NbConvertApp] WARNING | pattern &quot;&#39;../source/numpy_pandas.ipynb&#39;&quot; matched no files
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[NbConvertApp] WARNING | pattern &quot;&#39;../sources/numpy_pandas.ipynb&#39;&quot; matched no files
 </pre></div>
 </div>
 </div>
@@ -8370,12 +8326,12 @@ To see all available configurables, use `--help-all`.
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="for_while.html"
+       href="list_set_dict.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">For - While</p>
+        <p class="prev-next-title">List Set Dictionary</p>
       </div>
     </a>
 </div>

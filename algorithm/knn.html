@@ -189,6 +189,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Better Code</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../better-code/for_while.html">For - While</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../better-code/list_set_dict.html">List Set Dictionary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../better-code/numpy_pandas.html">Numpy &amp; Pandas</a></li>
 </ul>
 
@@ -231,53 +232,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/namtao/namtao.github.io" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/namtao/namtao.github.io/issues/new?title=Issue%20on%20page%20%2Falgorithm/knn.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
 
 
 
@@ -456,7 +410,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../source/iris_1D.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;../sources/iris_1D.csv&#39;</span><span class="p">)</span>
 <span class="n">data</span>
 </pre></div>
 </div>
@@ -1444,7 +1398,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <h3>IRIS_2D<a class="headerlink" href="#iris-2d" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../source/iris_2D.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../sources/iris_2D.csv&#39;</span><span class="p">)</span>
 <span class="n">data</span>
 </pre></div>
 </div>
@@ -2454,7 +2408,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../source/iris_2D_mm.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../sources/iris_2D_mm.csv&#39;</span><span class="p">)</span>
 
 <span class="c1"># get x</span>
 <span class="n">x_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;Petal_Length&#39;</span><span class="p">,</span> <span class="s1">&#39;Petal_Width&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
@@ -2537,7 +2491,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../source/iris_2D_mm.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../sources/iris_2D_mm.csv&#39;</span><span class="p">)</span>
 
 <span class="c1"># get x</span>
 <span class="n">x_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;Petal_Length&#39;</span><span class="p">,</span> <span class="s1">&#39;Petal_Width&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
@@ -2863,6 +2817,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 1 1 0 0 0]
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -2901,9 +2858,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;positive&#39;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -2946,9 +2900,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of classes: 3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of data points: 150
+Number of data points: 150
 </pre></div>
 </div>
 </div>
@@ -2988,14 +2940,14 @@ Test size    : 50
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Print results for 20 test data points:
-Predicted labels:  [0 2 0 2 1 1 0 0 1 2 1 2 1 2 2 2 1 1 0 1]
-Ground truth    :  [0 2 0 2 1 1 0 0 1 2 1 2 1 2 2 2 1 1 0 1]
+Predicted labels:  [1 2 2 1 2 0 0 0 0 0 2 0 1 2 2 1 1 2 2 0]
+Ground truth    :  [1 2 2 1 2 0 0 0 0 0 2 0 1 2 2 1 2 2 2 0]
 Accuracy of 10NN with major voting: 98.00 %
               precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        16
-           1       1.00      0.94      0.97        17
-           2       0.94      1.00      0.97        17
+           0       1.00      1.00      1.00        18
+           1       0.94      1.00      0.97        15
+           2       1.00      0.94      0.97        17
 
     accuracy                           0.98        50
    macro avg       0.98      0.98      0.98        50
@@ -3017,12 +2969,10 @@ weighted avg       0.98      0.98      0.98        50
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy of 10NN with major voting: 98.00 %
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+              precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        16
-           1       1.00      0.94      0.97        17
+           0       1.00      1.00      1.00        18
+           1       1.00      0.93      0.97        15
            2       0.94      1.00      0.97        17
 
     accuracy                           0.98        50
@@ -3050,8 +3000,8 @@ weighted avg       0.98      0.98      0.98        50
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy of 10NN with major voting: 98.00 %
               precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        16
-           1       1.00      0.94      0.97        17
+           0       1.00      1.00      1.00        18
+           1       1.00      0.93      0.97        15
            2       0.94      1.00      0.97        17
 
     accuracy                           0.98        50
@@ -3063,7 +3013,7 @@ weighted avg       0.98      0.98      0.98        50
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../source/TeleCustomers.csv&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../sources/TeleCustomers.csv&#39;</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -3282,7 +3232,7 @@ weighted avg       0.98      0.98      0.98        50
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../source/cruise_ship_info.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../sources/cruise_ship_info.csv&quot;</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="n">cols_selected</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Tonnage&#39;</span><span class="p">,</span> <span class="s1">&#39;passengers&#39;</span><span class="p">,</span> <span class="s1">&#39;length&#39;</span><span class="p">,</span> <span class="s1">&#39;cabins&#39;</span><span class="p">,</span><span class="s1">&#39;crew&#39;</span><span class="p">]</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cols_selected</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
@@ -4062,7 +4012,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">trainSet</span><span class="p">,</span> <span class="n">testSet</span> <span class="o">=</span> <span class="n">loadData</span><span class="p">(</span><span class="s2">&quot;../source/Iris.csv&quot;</span><span class="p">)</span>
+    <span class="n">trainSet</span><span class="p">,</span> <span class="n">testSet</span> <span class="o">=</span> <span class="n">loadData</span><span class="p">(</span><span class="s2">&quot;../sources/Iris.csv&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">trainSet</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">testSet</span><span class="p">:</span>
         <span class="n">knn</span> <span class="o">=</span> <span class="n">kNearestNeighbor</span><span class="p">(</span><span class="n">trainSet</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -4147,7 +4097,7 @@ label: Iris-setosa -&gt; predicted: Iris-setosa
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../source/penguins.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../sources/penguins.csv&quot;</span><span class="p">)</span>
 <span class="n">penguin</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
