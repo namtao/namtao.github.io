@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -186,11 +186,24 @@
 <li class="toctree-l1"><a class="reference internal" href="gradient_boost.html">Gradient Boost</a></li>
 <li class="toctree-l1"><a class="reference internal" href="xg_boost.html">XG Boost</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Better Code</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python basic</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../better-code/for_while.html">For - While</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../better-code/list_set_dict.html">List Set Dictionary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../better-code/numpy_pandas.html">Numpy &amp; Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-science/python-basic/for_while.html">For - While</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-science/python-basic/list_set_dict.html">List - Set - Dictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-science/python-basic/regex.html">Regex trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-science/python-basic/file_handle.html">Xử lý File trong Python (File Handling in Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-science/python-basic/module.html">Module trong Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numpy &amp; Pandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../data-science/numpy-pandas/numpy_math.html">Các hàm toán học trong Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-science/numpy-pandas/numpy_statics.html">Các hàm thống kê trong Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-science/numpy-pandas/numpy_1D.html">Numpy 1D trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-science/numpy-pandas/numpy_2D.html">Numpy 2D trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-science/numpy-pandas/numpy_lab.html">Bài tập: Thao tác với ma trận</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-science/numpy-pandas/numpy_summary.html">Summary</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../data-science/numpy-pandas/numpy_pandas.html">Numpy &amp; Pandas</a></li>
 </ul>
 
     </div>
@@ -1376,6 +1389,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([[0.7, 0.9, 1. , 1.4, 1.4, 1.7]]), array([[3, 2, 0, 1, 4, 5]], dtype=int64))
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -2817,9 +2833,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1 1 1 0 0 0]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 </section>
@@ -2858,6 +2871,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;positive&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -2940,18 +2956,18 @@ Test size    : 50
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Print results for 20 test data points:
-Predicted labels:  [1 2 2 1 2 0 0 0 0 0 2 0 1 2 2 1 1 2 2 0]
-Ground truth    :  [1 2 2 1 2 0 0 0 0 0 2 0 1 2 2 1 2 2 2 0]
-Accuracy of 10NN with major voting: 98.00 %
+Predicted labels:  [1 1 0 0 0 1 0 1 1 0 0 1 1 0 1 0 0 2 0 1]
+Ground truth    :  [1 1 0 0 0 1 0 1 1 0 0 1 1 0 1 0 0 2 0 1]
+Accuracy of 10NN with major voting: 100.00 %
               precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        18
-           1       0.94      1.00      0.97        15
-           2       1.00      0.94      0.97        17
+           0       1.00      1.00      1.00        19
+           1       1.00      1.00      1.00        22
+           2       1.00      1.00      1.00         9
 
-    accuracy                           0.98        50
-   macro avg       0.98      0.98      0.98        50
-weighted avg       0.98      0.98      0.98        50
+    accuracy                           1.00        50
+   macro avg       1.00      1.00      1.00        50
+weighted avg       1.00      1.00      1.00        50
 </pre></div>
 </div>
 </div>
@@ -2971,12 +2987,12 @@ weighted avg       0.98      0.98      0.98        50
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy of 10NN with major voting: 98.00 %
               precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        18
-           1       1.00      0.93      0.97        15
-           2       0.94      1.00      0.97        17
+           0       1.00      1.00      1.00        19
+           1       1.00      0.95      0.98        22
+           2       0.90      1.00      0.95         9
 
     accuracy                           0.98        50
-   macro avg       0.98      0.98      0.98        50
+   macro avg       0.97      0.98      0.97        50
 weighted avg       0.98      0.98      0.98        50
 </pre></div>
 </div>
@@ -3000,12 +3016,12 @@ weighted avg       0.98      0.98      0.98        50
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy of 10NN with major voting: 98.00 %
               precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        18
-           1       1.00      0.93      0.97        15
-           2       0.94      1.00      0.97        17
+           0       1.00      1.00      1.00        19
+           1       1.00      0.95      0.98        22
+           2       0.90      1.00      0.95         9
 
     accuracy                           0.98        50
-   macro avg       0.98      0.98      0.98        50
+   macro avg       0.97      0.98      0.97        50
 weighted avg       0.98      0.98      0.98        50
 </pre></div>
 </div>

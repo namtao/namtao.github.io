@@ -1,0 +1,1097 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Regex trong Python &#8212; Artificial Brains</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'data-science/python-basic/regex';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Xử lý File trong Python (File Handling in Python)" href="file_handle.html" />
+    <link rel="prev" title="List - Set - Dictionary" href="list_set_dict.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Artificial Brains - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Artificial Brains - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Artificial Brains
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/theory.html">Lý thuyết</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/knn.html">K-Nearest Neighbors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/decision_tree.html">Decision tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/random_forest.html">Random forest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/ada_boost.html">Ada Boost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/gradient_boost.html">Gradient Boost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/xg_boost.html">XG Boost</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python basic</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="for_while.html">For - While</a></li>
+<li class="toctree-l1"><a class="reference internal" href="list_set_dict.html">List - Set - Dictionary</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Regex trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_handle.html">Xử lý File trong Python (File Handling in Python)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">Module trong Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numpy &amp; Pandas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../numpy-pandas/numpy_math.html">Các hàm toán học trong Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy-pandas/numpy_statics.html">Các hàm thống kê trong Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy-pandas/numpy_1D.html">Numpy 1D trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy-pandas/numpy_2D.html">Numpy 2D trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy-pandas/numpy_lab.html">Bài tập: Thao tác với ma trận</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy-pandas/numpy_summary.html">Summary</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../numpy-pandas/numpy_pandas.html">Numpy &amp; Pandas</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/data-science/python-basic/regex.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Regex trong Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-ham-regex">Các hàm Regex</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xay-dung-bieu-thuc-chinh-quy">Xây dựng biểu thức chính quy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-characters">Meta-Characters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ky-tu-dac-biet">Ký tự đặc biệt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set">Set</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-findall">Hàm findall()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doi-tuong-match-ket-qua-khop">Đối tượng Match (kết quả khớp)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-phuong-thuc-doi-tuong-match">Các phương thức đối tượng Match</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-tap">Bài tập</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="regex-trong-python">
+<h1>Regex trong Python<a class="headerlink" href="#regex-trong-python" title="Link to this heading">#</a></h1>
+<p>Biểu thức chính quy (Regular Expressions) hay Regex trong Python có thể được định nghĩa là chuỗi các ký tự được sử dụng để tìm kiếm một mẫu trong chuỗi. Mô-đun re cung cấp hỗ trợ để sử dụng regex trong chương trình python. Mô-đun re bắn ra một ngoại lệ nếu có lỗi xảy ra trong khi sử dụng biểu thức chính quy.</p>
+<p>Bạn cần phải import mô-đun re để sử dụng các chức năng regex trong python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="cac-ham-regex">
+<h2>Các hàm Regex<a class="headerlink" href="#cac-ham-regex" title="Link to this heading">#</a></h2>
+<p>Các hàm regex sau được sử dụng trong Python.</p>
+<table class="alt">
+<tbody><tr>
+ <th width="20%">STT</th>
+ <th width="20%">Hàm</th>
+ <th>Mô tả</th>
+</tr>
+<tr>
+ <td>1</td>
+ <td>search</td>
+ <td>Hàm này trả về đối tượng khớp nếu có một kết quả khớp được tìm thấy trong chuỗi. </td>
+</tr>
+<tr>
+ <td>2</td>
+ <td>findall</td>
+ <td> Nó trả về một danh sách chứa tất cả các kết quả khớp của một mẫu trong chuỗi. </td>
+</tr>
+<tr>
+ <td>3</td>
+ <td>split</td>
+ <td>Trả về một danh sách trong đó chuỗi đã được phân chia theo mỗi kết quả khớp. </td>
+</tr>
+<tr>
+ <td>4</td>
+ <td>sub</td>
+ <td>Thay thế một hoặc nhiều kết quả khớp trong chuỗi.</td>
+</tr>
+</tbody></table></section>
+<section id="xay-dung-bieu-thuc-chinh-quy">
+<h2>Xây dựng biểu thức chính quy<a class="headerlink" href="#xay-dung-bieu-thuc-chinh-quy" title="Link to this heading">#</a></h2>
+<p>Một biểu thức chính quy có thể được hình thành bằng cách sử dụng kết hợp các meta-character, ký tự đặc biệt và set.</p>
+<section id="meta-characters">
+<h3>Meta-Characters<a class="headerlink" href="#meta-characters" title="Link to this heading">#</a></h3>
+<p>Metacharacter là một ký tự có ý nghĩa nhất định:</p>
+<table class="alt">
+<tbody><tr>
+ <th width="20%">Metacharacter</th>
+ <th width="60%">Mô tả</th>
+ <th>Ví dụ</th>
+</tr>
+<tr>
+ <td>[]</td>
+ <td>Nó đại diện cho một tập các ký tự.</td>
+ <td>"[a-z]"</td>
+</tr>
+<tr>
+ <td>\</td>
+ <td>Nó đại diện cho ký tự đặc biệt.</td>
+ <td>"\r"</td>
+</tr>
+<tr>
+ <td>.</td>
+ <td>Nó đại diện cho bất kỳ ký tự nào xuất hiện ở một số nơi cụ thể. </td>
+ <td>"Ja.v."</td>
+</tr>
+<tr>
+ <td>^</td>
+ <td>Nó đại diện cho mẫu có mặt ở đầu chuỗi.</td>
+ <td>"^Java"</td>
+</tr>
+<tr>
+ <td>$</td>
+ <td>Nó đại diện cho mẫu có mặt ở cuối chuỗi.</td>
+ <td>"mmc&#36;"</td>
+</tr>
+<tr>
+ <td>*</td>
+ <td>Nó đại diện cho không hoặc nhiều lần xuất hiện của một mẫu trong chuỗi.</td>
+ <td>"hello*"</td>
+</tr>
+<tr>
+ <td>+</td>
+ <td>Nó đại diện cho một hoặc nhiều lần xuất hiện của một mẫu trong chuỗi.</td>
+ <td>"hello+"</td>
+</tr>
+<tr>
+ <td>{}</td>
+ <td>Số lần xuất hiện đã chỉ định của một mẫu trong chuỗi.</td>
+ <td>"java{2}"</td>
+</tr>
+<tr>
+ <td>|</td>
+ <td>Nó biểu diễn cho cái này hoặc cái kia (điều kiện or). </td>
+ <td>"python2|python3"</td>
+</tr>
+<tr>
+ <td>()</td>
+ <td>Nhóm các thành phần.</td>
+ <td></td>
+</tr>
+</tbody></table></section>
+<section id="ky-tu-dac-biet">
+<h3>Ký tự đặc biệt<a class="headerlink" href="#ky-tu-dac-biet" title="Link to this heading">#</a></h3>
+<p>Ký tự đặt biệt là các chuỗi có chứa \ theo sau là một trong các ký tự.</p>
+<table class="alt">
+<tbody><tr>
+ <th width="20%">Ký tự</th>
+ <th>Mô tả</th>
+</tr>
+<tr>
+ <td>\A</td>
+ <td>Nó trả về một kết quả khớp nếu các ký tự được chỉ định có mặt ở đầu chuỗi.</td>
+</tr>
+<tr>
+ <td>\b</td>
+ <td>Nó trả về một kết quả khớp nếu các ký tự được chỉ định có mặt ở đầu hoặc cuối chuỗi.</td>
+</tr>
+<tr>
+ <td>\B</td>
+ <td>Nó trả về một kết quả khớp nếu các ký tự được chỉ định có mặt ở đầu chuỗi nhưng không ở cuối chuỗi. </td>
+</tr>
+<tr>
+ <td>\d</td>
+ <td>Nó trả về một kết quả khớp nếu chuỗi chứa các chữ số [0-9]. </td>
+</tr>
+<tr>
+ <td>\D</td>
+ <td>Nó trả về một kết quả khớp nếu chuỗi không chứa các chữ số [0-9].</td>
+</tr>
+<tr>
+ <td>\s</td>
+ <td>Nó trả về một kết quả khớp nếu chuỗi chứa bất kỳ ký tự khoảng trắng nào.</td>
+</tr>
+<tr>
+ <td>\S</td>
+ <td>Nó trả về một kết quả khớp nếu chuỗi không chứa bất kỳ ký tự khoảng trắng nào.</td>
+</tr>
+<tr>
+ <td>\w</td>
+ <td>Nó trả về một kết quả khớp nếu chuỗi chứa bất kỳ ký tự từ nào.</td>
+</tr>
+<tr>
+ <td>\W</td>
+ <td>Nó trả về một kết quả khớp nếu chuỗi không chứa bất kỳ từ nào.</td>
+</tr>
+<tr>
+ <td>\Z</td>
+ <td>Trả về một kết quả khớp nếu các ký tự được chỉ định ở cuối chuỗi. </td>
+</tr>
+</tbody></table></section>
+<section id="set">
+<h3>Set<a class="headerlink" href="#set" title="Link to this heading">#</a></h3>
+<p>Một set là một nhóm các ký tự được đưa ra bên trong một cặp dấu ngoặc vuông. Nó đại diện cho ý nghĩa đặc biệt.</p>
+<table class="alt">
+<tbody><tr>
+ <th width="10%">STT</th>
+ <th width="20%">Set</th>
+ <th>Mô tả</th>
+</tr>
+<tr>
+ <td>1</td>
+ <td>[arn]</td>
+ <td>Trả về một kết quả khớp nếu chuỗi chứa bất kỳ ký tự nào được chỉ định trong tập hợp.</td>
+</tr>
+<tr>
+ <td>2</td>
+ <td>[a-n]</td>
+ <td>Trả về một kết quả khớp nếu chuỗi chứa bất kỳ ký tự nào từ a đến n.</td>
+</tr>
+<tr>
+ <td>3</td>
+ <td>[^arn]</td>
+ <td>Trả về một kết quả khớp nếu chuỗi chứa các ký tự ngoại trừ a, r và n. </td>
+</tr>
+<tr>
+ <td>4</td>
+ <td>[0123]</td>
+ <td>Trả về một kết quả khớp nếu chuỗi chứa bất kỳ chữ số nào được chỉ định. </td>
+</tr>
+<tr>
+ <td>5</td>
+ <td>[0-9]</td>
+ <td>Trả về một kết quả khớp nếu chuỗi chứa bất kỳ chữ số nào trong khoảng từ 0 đến 9. </td>
+</tr>
+<tr>
+ <td>6</td>
+ <td>[0-5][0-9]</td>
+ <td>Trả về một kết quả khớp nếu chuỗi chứa bất kỳ chữ số nào trong khoảng từ 00 đến 59.</td>
+</tr>
+<tr>
+ <td>10</td>
+ <td>[a-zA-Z]</td>
+ <td>Trả về một kết quả khớp nếu chuỗi chứa bất kỳ bảng chữ cái nào (chữ thường hoặc chữ hoa). </td>
+</tr>
+</tbody></table></section>
+</section>
+<section id="ham-findall">
+<h2>Hàm findall()<a class="headerlink" href="#ham-findall" title="Link to this heading">#</a></h2>
+<p>Phương thức này trả về một danh sách chứa danh sách tất cả các kết quả khớp của mẫu trong chuỗi. Nó trả về các mẫu theo thứ tự chúng được tìm thấy. Nếu không có kết quả khớp, thì một danh sách trống được trả về. Ví dụ:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Xin chào Bạn! Bạn đang học bài Regex trong Python.&quot;</span>
+<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;Bạn&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Bạn&#39;, &#39;Bạn&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;[A-Z]&quot;</span><span class="p">,</span> <span class="s1">&#39;MetaMind&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;M&#39;, &#39;M&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="doi-tuong-match-ket-qua-khop">
+<h2>Đối tượng Match (kết quả khớp)<a class="headerlink" href="#doi-tuong-match-ket-qua-khop" title="Link to this heading">#</a></h2>
+<p>Đối tượng match chứa thông tin về tìm kiếm và đầu ra. Nếu không tìm thấy kết quả khớp, đối tượng None được trả về. Ví dụ:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">regex</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d</span><span class="si">{5}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s2">&quot;Mã OTP là 12345, có hiệu lực trong 1 phút.&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[A-Z]&#39;</span><span class="p">,</span> <span class="s2">&quot;Thành viên gồm: Đăng, Linh, Nhã, Khôi, Tuấn&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">regex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\p</span><span class="si">{Lu}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s2">&quot;Thành viên gồm: Đăng, Linh, Nhã, Khôi, Tuấn&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;: |, &#39;</span><span class="p">,</span> <span class="s2">&quot;Thành viên gồm: Đăng, Linh, Nhã, Khôi, Tuấn&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[0-9]&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s2">&quot;Mã OTP là 12345, có hiệu lực trong 1 phút.&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;re.Match object; span=(10, 15), match=&#39;12345&#39;&gt;
+
+[&#39;T&#39;, &#39;L&#39;, &#39;N&#39;, &#39;K&#39;, &#39;T&#39;]
+[&#39;T&#39;, &#39;Đ&#39;, &#39;L&#39;, &#39;N&#39;, &#39;K&#39;, &#39;T&#39;]
+
+[&#39;Thành viên gồm&#39;, &#39;Đăng&#39;, &#39;Linh&#39;, &#39;Nhã&#39;, &#39;Khôi&#39;, &#39;Tuấn&#39;]
+
+Mã OTP là 00000, có hiệu lực trong 0 phút.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">pattern</span> <span class="o">=</span> <span class="s1">&#39;^a...s$&#39;</span>
+<span class="n">test_string</span> <span class="o">=</span> <span class="s1">&#39;abyss&#39;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">test_string</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tim kiem thanh cong.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tim kiem khong thanh cong.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tim kiem thanh cong.
+</pre></div>
+</div>
+</div>
+</div>
+<section id="cac-phuong-thuc-doi-tuong-match">
+<h3>Các phương thức đối tượng Match<a class="headerlink" href="#cac-phuong-thuc-doi-tuong-match" title="Link to this heading">#</a></h3>
+<p>Có các phương thức sau liên quan đến đối tượng Match.</p>
+<ul class="simple">
+<li><p><strong>span()</strong>: Nó trả về bộ dữ liệu chứa vị trí bắt đầu và kết thúc của kết quả khớp.</p></li>
+<li><p><strong>string()</strong>: Nó trả về một chuỗi được truyền vào hàm.</p></li>
+<li><p><strong>group()</strong>: Một phần của chuỗi được trả về nơi tìm thấy kết quả khớp.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Xin chào Bạn! Bạn đang học bài Regex trong Python.&quot;</span>
+<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;Bạn&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matches</span><span class="o">.</span><span class="n">span</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matches</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matches</span><span class="o">.</span><span class="n">string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(9, 12)
+Bạn
+Xin chào Bạn! Bạn đang học bài Regex trong Python.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">stri</span> <span class="o">=</span> <span class="s2">&quot;Ma xac thuc Tiki la 685708&quot;</span>
+<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\b\d</span><span class="si">{6}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="n">stri</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matches</span><span class="o">.</span><span class="n">span</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matches</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matches</span><span class="o">.</span><span class="n">string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(20, 26)
+685708
+Ma xac thuc Tiki la 685708
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="bai-tap">
+<h2>Bài tập<a class="headerlink" href="#bai-tap" title="Link to this heading">#</a></h2>
+<p><strong>Bài 1:</strong> Mở file <a class="reference external" href="http://Ex1.py">Ex1.py</a> và hoàn thành đoạn code để lấy các dòng được bắt đầu bằng ký tự “&gt;”, kết quả sau khi chạy sẽ như sau:</p>
+<p><code class="docutils literal notranslate"><span class="pre">['&gt;Venues',</span> <span class="pre">'&gt;Marketing',</span> <span class="pre">'&gt;medalists',</span> <span class="pre">'&gt;Controversies',</span> <span class="pre">'&gt;Paralympics',</span> <span class="pre">'&gt;snowboarding',</span> <span class="pre">'&gt;Netherlands',</span> <span class="pre">'&gt;Norway',</span> <span class="pre">'&gt;References',</span> <span class="pre">'&gt;edit',</span> <span class="pre">'&gt;Norway',</span> <span class="pre">'&gt;Germany',</span> <span class="pre">'&gt;Canada',</span> <span class="pre">'&gt;Netherlands',</span> <span class="pre">'&gt;Japan',</span> <span class="pre">'&gt;Italy',</span> <span class="pre">'&gt;Belarus',</span> <span class="pre">'&gt;China',</span> <span class="pre">'&gt;Slovakia',</span> <span class="pre">'&gt;Slovenia',</span> <span class="pre">'&gt;Belgium',</span> <span class="pre">'&gt;Spain',</span> <span class="pre">'&gt;Kazakhstan',</span> <span class="pre">'&gt;1964',</span> <span class="pre">'&gt;1968',</span> <span class="pre">'&gt;1972',</span> <span class="pre">'&gt;1992',</span> <span class="pre">'&gt;1996',</span> <span class="pre">'&gt;2000']</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">&gt;Venues</span>
+<span class="s2">&gt;Marketing</span>
+<span class="s2">&gt;medalists</span>
+<span class="s2">&gt;Controversies</span>
+<span class="s2">&gt;Paralympics</span>
+<span class="s2">&gt;snowboarding</span>
+<span class="s2">&gt;[1]</span>
+<span class="s2">&gt;Netherlands</span>
+<span class="s2">&gt;[2]</span>
+<span class="s2">&gt;Norway</span>
+<span class="s2">&gt;[10]</span>
+<span class="s2">&gt;[11]</span>
+<span class="s2">&gt;References</span>
+<span class="s2">&gt;edit</span>
+<span class="s2">&gt;[12]</span>
+<span class="s2">&gt;Norway</span>
+<span class="s2">&gt;Germany</span>
+<span class="s2">&gt;Canada</span>
+<span class="s2">&gt;Netherlands</span>
+<span class="s2">&gt;Japan</span>
+<span class="s2">&gt;Italy</span>
+<span class="s2">&gt;Belarus</span>
+<span class="s2">&gt;China</span>
+<span class="s2">&gt;Slovakia</span>
+<span class="s2">&lt;$#%#$%</span>
+<span class="s2">&lt;#$#$$</span>
+<span class="s2">&lt;**&amp;&amp;^^</span>
+<span class="s2">&gt;Slovenia</span>
+<span class="s2">&gt;Belgium</span>
+<span class="s2">&gt;Spain</span>
+<span class="s2">&gt;Kazakhstan</span>
+<span class="s2">&gt;[15]</span>
+<span class="s2">&gt;1964</span>
+<span class="s2">&gt;1968</span>
+<span class="s2">&gt;1972</span>
+<span class="s2">&gt;1992</span>
+<span class="s2">&gt;1996</span>
+<span class="s2">&gt;2000&quot;&quot;&quot;</span>
+    
+<span class="n">lst_str</span> <span class="o">=</span> <span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">lst_1</span> <span class="o">=</span><span class="p">[]</span>
+
+<span class="c1"># for s in lst_str:</span>
+<span class="c1">#     if not (len(s)==0 or s[0]!=&#39;&gt;&#39; or s[1] == &#39;[&#39;):</span>
+<span class="c1">#         lst_1.append(s)</span>
+        
+        
+<span class="c1"># print(lst_1)</span>
+
+
+<span class="c1"># Type your answer here.</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;&gt;[\w]+&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;&gt;Venues&#39;, &#39;&gt;Marketing&#39;, &#39;&gt;medalists&#39;, &#39;&gt;Controversies&#39;, &#39;&gt;Paralympics&#39;, &#39;&gt;snowboarding&#39;, &#39;&gt;Netherlands&#39;, &#39;&gt;Norway&#39;, &#39;&gt;References&#39;, &#39;&gt;edit&#39;, &#39;&gt;Norway&#39;, &#39;&gt;Germany&#39;, &#39;&gt;Canada&#39;, &#39;&gt;Netherlands&#39;, &#39;&gt;Japan&#39;, &#39;&gt;Italy&#39;, &#39;&gt;Belarus&#39;, &#39;&gt;China&#39;, &#39;&gt;Slovakia&#39;, &#39;&gt;Slovenia&#39;, &#39;&gt;Belgium&#39;, &#39;&gt;Spain&#39;, &#39;&gt;Kazakhstan&#39;, &#39;&gt;1964&#39;, &#39;&gt;1968&#39;, &#39;&gt;1972&#39;, &#39;&gt;1992&#39;, &#39;&gt;1996&#39;, &#39;&gt;2000&#39;]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:53: SyntaxWarning: invalid escape sequence &#39;\w&#39;
+&lt;&gt;:53: SyntaxWarning: invalid escape sequence &#39;\w&#39;
+C:\Users\vanna\AppData\Local\Temp\ipykernel_11192\1500890461.py:53: SyntaxWarning: invalid escape sequence &#39;\w&#39;
+  data = re.findall(&#39;&gt;[\w]+&#39;, str)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Bài 2:</strong> Mở file <a class="reference external" href="http://Ex2.py">Ex2.py</a> và hoàn thành đoạn code để lấy được các email có trong chuỗi đó. Kết quả sau khi chạy sẽ như sau:</p>
+<p><code class="docutils literal notranslate"><span class="pre">['franky&#64;google.com',</span> <span class="pre">'sinatra123&#64;yahoo.com']</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="o">=</span><span class="s1">&#39;The advancements in biomarine studies franky@google.com with the investments necessary and Davos sinatra123@yahoo.com Then The New Yorker article on wind farms...&#39;</span>
+<span class="c1">#Type your answer here.</span>
+
+<span class="n">regex</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\w+@\w+.\w+&#39;</span>
+
+
+<span class="n">emails</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">emails</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;franky@google.com&#39;, &#39;sinatra123@yahoo.com&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Bài 3:</strong> Mở file <a class="reference external" href="http://Ex3.py">Ex3.py</a> và hoàn thành đoạn code để lấy được các email có trong chuỗi đó (chỉ lấy phần ở trước ký tự ‘&#64;’ và ký tự ‘&#64;’). Kết quả sau khi chạy sẽ như sau:</p>
+<p><code class="docutils literal notranslate"><span class="pre">['franky&#64;',</span> <span class="pre">'sinatra123&#64;']</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="o">=</span><span class="s1">&#39;The advancements in biomarine studies franky@google.com, with the investments necessary and Davos sinatra123@yahoo.com Then The New Yorker article on wind farms...&#39;</span>
+<span class="c1">#Type your answer here.</span>
+
+<span class="n">regex</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\w+@&#39;</span>
+
+<span class="n">emails</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">emails</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;franky@&#39;, &#39;sinatra123@&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Bài 4:</strong> Mở file <a class="reference external" href="http://Ex4.py">Ex4.py</a> và hoàn thành đoạn code tương tự như bài 3, nhưng lần này không lấy ký tự ‘&#64;’ nữa. Kết quả sau khi chạy sẽ như sau:</p>
+<p><code class="docutils literal notranslate"><span class="pre">['franky',</span> <span class="pre">'sinatra123']</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="o">=</span><span class="s1">&#39;The advancements in biomarine studies franky@google.com, with the investments necessary and Davos sinatra123@yahoo.com Then The New Yorker article on wind farms...&#39;</span>
+<span class="c1">#Type your answer here.</span>
+
+<span class="n">regex</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\w+@&#39;</span>
+
+<span class="n">emails</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;([\w]+)(@)&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">([</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">emails</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;franky&#39;, &#39;sinatra123&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Bài 5:</strong> Mở file <a class="reference external" href="http://Ex5.py">Ex5.py</a> và hoàn thành đoạn code để trích xuất những từ có đúng 8 ký tự từ chuỗi. Kết quả sau khi chạy sẽ như sau:</p>
+<p><code class="docutils literal notranslate"><span class="pre">['empourpr',</span> <span class="pre">'palmiers']</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;Au pays parfume que le soleil caresse,</span>
+<span class="s1">J&#39;ai connu, sous un dais d&#39;arbres tout empourpres</span>
+<span class="s1">Et de palmiers d&#39;ou pleut sur les yeux la paresse,</span>
+<span class="s1">Une dame creole aux charmes ignores.&#39;&#39;&#39;</span>
+
+<span class="c1">#Type your answer here.</span>
+
+<span class="n">regex</span><span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;\w</span><span class="si">{8}</span><span class="s2">&quot;</span>
+
+<span class="n">emails</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">emails</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;empourpr&#39;, &#39;palmiers&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Bài 6:</strong> Mở file <a class="reference external" href="http://Ex6.py">Ex6.py</a> và hoàn thành đoạn code để trích xuất những số bắt đầu với ‘212’. Kết quả sau khi chạy sẽ như sau:</p>
+<p><code class="docutils literal notranslate"><span class="pre">['21299']</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;Ancient Script 21299: The Takenouchi documents are the ancient historical records that have been secretly preserved and passed down from generation to generation by the Takenouchi family, the head of family being the chief priest of the Koso Kotai Jingu shrine. 212-111-5932 &#39;&#39;&#39;</span>
+
+<span class="c1">#Type your answer here.</span>
+
+<span class="n">regex</span><span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;\b212\w+&quot;</span>
+<span class="n">data</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;21299&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Bài 7:</strong> Mở file <a class="reference external" href="http://Ex7.py">Ex7.py</a> và hoàn thành đoạn code theo yêu cầu sau. Bạn được cung cấp giá cổ phiếu cho các mã tài chính liên quan. (Biểu tượng đại diện cho các công ty trên thị trường chứng khoán). Tìm cách trích xuất các mã được đề cập trong báo cáo. tức là: TSLA, NFLX … Kết quả sau khi chạy sẽ như sau:</p>
+<p><code class="docutils literal notranslate"><span class="pre">['TSLA',</span> <span class="pre">'ORCL',</span> <span class="pre">'GE',</span> <span class="pre">'MSFT',</span> <span class="pre">'BIDU']</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;Some of the prices were as following TSLA:749.50, ORCL: 50.50, GE: 10.90, MSFT: 170.50, BIDU: 121.40. As the macroeconomic developments continue we will update the prices. &quot;&quot;&quot;</span>
+
+<span class="c1">#Type your answer here.</span>
+
+<span class="n">regex</span><span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(\w+):\s*(\d+\.\d+)&#39;</span>
+<span class="n">data</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">([</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;TSLA&#39;, &#39;ORCL&#39;, &#39;GE&#39;, &#39;MSFT&#39;, &#39;BIDU&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Bài 8:</strong> Mở file <a class="reference external" href="http://Ex8.py">Ex8.py</a> và hoàn thành đoạn code để trích xuất các thẻ html có nhiều hơn 4 chữ cái. Các thẻ html mở có thể được tìm thấy bên trong các ký tự &lt;&gt; và các thẻ html đóng có thể được tìm thấy ở cùng một định dạng sau ký tự &lt;/&gt;, ví dụ <param> </param>. Kết quả sau khi chạy sẽ như sau:</p>
+<p><code class="docutils literal notranslate"><span class="pre">['video',</span> <span class="pre">'center',</span> <span class="pre">'button']</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;&lt;div class=&quot;tut-list tut-list-new tut-row &quot;&gt;</span>
+<span class="s2">&lt;div class=&quot;tut-list-primary&quot;&gt; &lt;div class=&quot;tut-vote&quot;&gt;</span>
+<span class="s2">&lt;video&gt;intro&lt;/video&gt;</span>
+<span class="s2">&lt;span class=&quot;count&quot;&gt;50&lt;/span&gt; &lt;span class=&quot;tut-upvotes-text hidden&quot;&gt;Upvotes&lt;/span&gt; &lt;/a&gt; &lt;/div&gt;</span>
+<span class="s2">&lt;center&gt;k=&quot;11&quot; rel=&quot;nofollow&quot;&gt;&lt;/center&gt;</span>
+<span class="s2">&lt;span class=&quot;tutorial-title-txt&quot;&gt;Automate the Boring Stuff with Python&lt;/span&gt;</span>
+<span class="s2">&lt;span class=&quot;tut-title-link&quot;&gt;  &lt;span class=&quot;js-tutorial&quot; data-id=&quot;3529&quot;</span>
+<span class="s2">title=&quot;Automate the Boring Stuff with Python&quot; target=&quot;_blank&quot;&gt;(udemy.com)&lt;/span&gt;</span>
+<span class="s2">&lt;/span&gt;  &lt;/a&gt;&lt;/div&gt; &lt;div class=&quot;action-footer&quot;&gt;</span>
+<span class="s2">&lt;form class=&quot;save-tutorial-form&quot; method=&quot;post&quot; &lt;button&gt;&lt;/button&gt; &lt;/form&gt;&quot;&quot;&quot;</span>
+
+<span class="c1">#Type your answer here.</span>
+
+<span class="n">regex</span><span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;&lt;\w{5,}&quot;</span>
+
+
+<span class="n">data</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">([</span><span class="n">i</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;video&#39;, &#39;center&#39;, &#39;button&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./data-science\python-basic"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="list_set_dict.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">List - Set - Dictionary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="file_handle.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Xử lý File trong Python (File Handling in Python)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-ham-regex">Các hàm Regex</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xay-dung-bieu-thuc-chinh-quy">Xây dựng biểu thức chính quy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-characters">Meta-Characters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ky-tu-dac-biet">Ký tự đặc biệt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set">Set</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-findall">Hàm findall()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doi-tuong-match-ket-qua-khop">Đối tượng Match (kết quả khớp)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-phuong-thuc-doi-tuong-match">Các phương thức đối tượng Match</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-tap">Bài tập</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Van Nam Nguyen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
