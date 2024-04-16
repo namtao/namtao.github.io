@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -58,9 +58,10 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'data-science/numpy-pandas/numpy_summary';</script>
+    <link rel="icon" href="../../_static/favicon(1).ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Numpy &amp; Pandas" href="numpy_pandas.html" />
+    <link rel="next" title="Lý thuyết" href="../../algorithm/theory.html" />
     <link rel="prev" title="Bài tập: Thao tác với ma trận" href="numpy_lab.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -176,17 +177,7 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../algorithm/theory.html">Lý thuyết</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../algorithm/knn.html">K-Nearest Neighbors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../algorithm/decision_tree.html">Decision tree</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../algorithm/random_forest.html">Random forest</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../algorithm/ada_boost.html">Ada Boost</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../algorithm/gradient_boost.html">Gradient Boost</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../algorithm/xg_boost.html">XG Boost</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python basic</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python basic</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../python-basic/for_while.html">For - While</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-basic/list_set_dict.html">List - Set - Dictionary</a></li>
@@ -202,8 +193,16 @@
 <li class="toctree-l1"><a class="reference internal" href="numpy_2D.html">Numpy 2D trong Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numpy_lab.html">Bài tập: Thao tác với ma trận</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Summary</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="numpy_pandas.html">Numpy &amp; Pandas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/theory.html">Lý thuyết</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/knn.html">K-Nearest Neighbors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/decision_tree.html">Decision tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/random_forest.html">Random forest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/ada_boost.html">Ada Boost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/gradient_boost.html">Gradient Boost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/xg_boost.html">XG Boost</a></li>
 </ul>
 
     </div>
@@ -352,19 +351,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Summary</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nhung-kien-thuc-da-hoc-tong-hop-tai-lieu">Những Kiến thức đã học (tổng hợp tài liệu):</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-hieu-them-ve-kieu-du-lieu">Bonus: Hiểu thêm về kiểu dữ liệu</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-hieu-them-ve-kieu-du-lieu">Bonus: Hiểu thêm về kiểu dữ liệu</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cach-luu-tru-du-lieu-cua-python-khac-gi-ngon-ngu-khac">Cách lưu trữ dữ liệu của Python khác gì ngôn ngữ khác</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-nguyen-integer-trong-python-khong-don-gian-chi-la-so-nguyen">Số nguyên (Integer) trong Python không đơn giản chỉ là số nguyên</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-trong-python-cung-khong-don-gian-chi-la-list">List trong Python cũng không đơn giản chỉ là list</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bang-tinh-chat-kieu-du-lieu">Bảng tính chất kiểu dữ liệu</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -386,11 +379,11 @@ document.write(`
 <li><p>Các hàm thống kê trong Numpy <a class="reference external" href="https://colab.research.google.com/drive/1V_mHnFp3Kvr657TRmMikwCyWqxr0C-uj?usp=drive_link">Link Notebook</a></p></li>
 </ol>
 </section>
-</section>
 <hr class="docutils" />
-<section class="tex2jax_ignore mathjax_ignore" id="bonus-hieu-them-ve-kieu-du-lieu">
-<h1>Bonus: Hiểu thêm về kiểu dữ liệu<a class="headerlink" href="#bonus-hieu-them-ve-kieu-du-lieu" title="Link to this heading">#</a></h1>
+<section id="bonus-hieu-them-ve-kieu-du-lieu">
+<h2>Bonus: Hiểu thêm về kiểu dữ liệu<a class="headerlink" href="#bonus-hieu-them-ve-kieu-du-lieu" title="Link to this heading">#</a></h2>
 <p><em>Trong khoa học dữ liệu, hiểu cách mà dữ liệu được lưu trữ hay cách thao tác với dữ liệu là rất quan trọng, vì vậy trong bài viết ngắn này sẽ cung cấp cho mọi người góc nhìn trực quan hơn về cách mà python tổ chức dữ liệu, cũng như cách mà Numpy lưu trữ, tổ chức dữ liệu.</em></p>
+</section>
 <section id="cach-luu-tru-du-lieu-cua-python-khac-gi-ngon-ngu-khac">
 <h2>Cách lưu trữ dữ liệu của Python khác gì ngôn ngữ khác<a class="headerlink" href="#cach-luu-tru-du-lieu-cua-python-khac-gi-ngon-ngu-khac" title="Link to this heading">#</a></h2>
 <p>Trong C/C++, khi chúng ta muốn khai báo biến, thứ quan trọng nhất chính là kiểu dữ liệu, nó giúp chúng ta lưu trữ dữ liệu tối ưu nhất. Thế nhưng python rất khác, nhiều người ưa thích tính tiện lợi của nó khi việc lưu trữ kiểu dữ liệu dưới dạng động (dynamic - tự động phù hợp với input gán cho biến)<br />
@@ -575,11 +568,11 @@ Như vậy, vấn đề trùng lặp sẽ xảy ra nếu tất cả item trong l
       </div>
     </a>
     <a class="right-next"
-       href="numpy_pandas.html"
+       href="../../algorithm/theory.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Numpy &amp; Pandas</p>
+        <p class="prev-next-title">Lý thuyết</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -599,19 +592,13 @@ Như vậy, vấn đề trùng lặp sẽ xảy ra nếu tất cả item trong l
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Summary</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nhung-kien-thuc-da-hoc-tong-hop-tai-lieu">Những Kiến thức đã học (tổng hợp tài liệu):</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-hieu-them-ve-kieu-du-lieu">Bonus: Hiểu thêm về kiểu dữ liệu</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-hieu-them-ve-kieu-du-lieu">Bonus: Hiểu thêm về kiểu dữ liệu</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cach-luu-tru-du-lieu-cua-python-khac-gi-ngon-ngu-khac">Cách lưu trữ dữ liệu của Python khác gì ngôn ngữ khác</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#so-nguyen-integer-trong-python-khong-don-gian-chi-la-so-nguyen">Số nguyên (Integer) trong Python không đơn giản chỉ là số nguyên</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-trong-python-cung-khong-don-gian-chi-la-list">List trong Python cũng không đơn giản chỉ là list</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bang-tinh-chat-kieu-du-lieu">Bảng tính chất kiểu dữ liệu</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>

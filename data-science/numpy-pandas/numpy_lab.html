@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -60,6 +60,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'data-science/numpy-pandas/numpy_lab';</script>
+    <link rel="icon" href="../../_static/favicon(1).ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Summary" href="numpy_summary.html" />
@@ -178,17 +179,7 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../algorithm/theory.html">Lý thuyết</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../algorithm/knn.html">K-Nearest Neighbors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../algorithm/decision_tree.html">Decision tree</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../algorithm/random_forest.html">Random forest</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../algorithm/ada_boost.html">Ada Boost</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../algorithm/gradient_boost.html">Gradient Boost</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../algorithm/xg_boost.html">XG Boost</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python basic</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python basic</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../python-basic/for_while.html">For - While</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../python-basic/list_set_dict.html">List - Set - Dictionary</a></li>
@@ -204,8 +195,16 @@
 <li class="toctree-l1"><a class="reference internal" href="numpy_2D.html">Numpy 2D trong Python</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Bài tập: Thao tác với ma trận</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numpy_summary.html">Summary</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="numpy_pandas.html">Numpy &amp; Pandas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/theory.html">Lý thuyết</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/knn.html">K-Nearest Neighbors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/decision_tree.html">Decision tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/random_forest.html">Random forest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/ada_boost.html">Ada Boost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/gradient_boost.html">Gradient Boost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/xg_boost.html">XG Boost</a></li>
 </ul>
 
     </div>
@@ -405,20 +404,19 @@ Tạo ma trận 5x5 ngẫu nhiên và thực hiện các thao tác sau:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eigenvalues = [ 2.59364440e+00+0.j         -1.42913494e-03+0.72322605j
- -1.42913494e-03-0.72322605j -6.60283198e-01+0.j
- -9.43023053e-02+0.j        ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eigenvalues = [ 2.48003735+0.j          0.85749635+0.j         -0.765373  +0.j
+ -0.04797102+0.29825212j -0.04797102-0.29825212j]
 
-eigenvectors = [[ 0.42980958+0.j         -0.6498873 +0.j         -0.6498873 -0.j
-  -0.22929795+0.j          0.02220145+0.j        ]
- [ 0.37337984+0.j          0.08405746+0.44671288j  0.08405746-0.44671288j
-   0.82196632+0.j          0.13324409+0.j        ]
- [ 0.39693556+0.j          0.31662417+0.26340657j  0.31662417-0.26340657j
-  -0.49382429+0.j         -0.02133207+0.j        ]
- [ 0.46299929+0.j          0.12972135-0.15746177j  0.12972135+0.15746177j
-   0.16523436+0.j         -0.73313281+0.j        ]
- [ 0.55129397+0.j         -0.03393343-0.39827281j -0.03393343+0.39827281j
-   0.02507972+0.j          0.66619391+0.j        ]]
+eigenvectors = [[-0.28145546+0.j         -0.71502178+0.j         -0.16828806+0.j
+  -0.1369383 -0.08863923j -0.1369383 +0.08863923j]
+ [-0.42481235+0.j          0.21706291+0.j         -0.59759724+0.j
+   0.32630475+0.37929876j  0.32630475-0.37929876j]
+ [-0.45395313+0.j         -0.00170609+0.j          0.6783144 +0.j
+  -0.66051922+0.j         -0.66051922-0.j        ]
+ [-0.39581409+0.j         -0.17779739+0.j          0.36274051+0.j
+   0.37363756+0.09890102j  0.37363756-0.09890102j]
+ [-0.61447136+0.j          0.64032236+0.j         -0.15121361+0.j
+   0.07379233-0.36322343j  0.07379233+0.36322343j]]
 </pre></div>
 </div>
 </div>
