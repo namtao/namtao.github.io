@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -188,6 +188,11 @@
 <li class="toctree-l1"><a class="reference internal" href="numpy_2D.html">Numpy 2D trong Python</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Bài tập: Thao tác với ma trận</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numpy_summary.html">Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab_numpy_pandas.html">Bài tập tổng hợp về Numpy &amp; Pandas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">MongoDB</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../database/mongo.html">MongoDB</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
 <ul class="nav bd-sidenav">
@@ -349,19 +354,13 @@ Tạo ma trận 5x5 ngẫu nhiên và thực hiện các thao tác sau:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eigenvalues = [ 2.75937107+0.j          0.26287813+0.2886852j   0.26287813-0.2886852j
- -0.2472134 +0.22128168j -0.2472134 -0.22128168j]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eigenvalues = [ 2.12996611 -0.66413384 -0.18448275  0.53342834  0.62814713]
 
-eigenvectors = [[ 0.43884709+0.j          0.1738326 +0.06707774j  0.1738326 -0.06707774j
-  -0.43000358+0.30496128j -0.43000358-0.30496128j]
- [ 0.44306802+0.j         -0.7249808 +0.j         -0.7249808 -0.j
-  -0.41071126+0.09748229j -0.41071126-0.09748229j]
- [ 0.21027908+0.j          0.36520242+0.35523832j  0.36520242-0.35523832j
-   0.11275887+0.00354419j  0.11275887-0.00354419j]
- [ 0.64494682+0.j          0.09399999-0.21405446j  0.09399999+0.21405446j
-   0.09054065-0.28672164j  0.09054065+0.28672164j]
- [ 0.38849745+0.j          0.20347794-0.289931j    0.20347794+0.289931j
-   0.66390885+0.j          0.66390885-0.j        ]]
+eigenvectors = [[-0.31385145 -0.77681212 -0.46096786 -0.32225363  0.23698889]
+ [-0.40764137  0.1035341  -0.13689318  0.36066649 -0.20126198]
+ [-0.60241419  0.05144989  0.69475791  0.83888118 -0.91157367]
+ [-0.50967099  0.55134189 -0.4631804  -0.13147687 -0.02908509]
+ [-0.33564627  0.28145809  0.26747758 -0.21228396  0.26742734]]
 </pre></div>
 </div>
 </div>
@@ -434,8 +433,8 @@ Thực hiện phân tích thống kê trên tập dữ liệu bai3.csv bằng Nu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                      </span>Traceback (most recent call last)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Load dataset</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;bai3.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>

@@ -186,6 +186,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../numpy-pandas/numpy_2D.html">Numpy 2D trong Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../numpy-pandas/numpy_lab.html">Bài tập: Thao tác với ma trận</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../numpy-pandas/numpy_summary.html">Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../numpy-pandas/lab_numpy_pandas.html">Bài tập tổng hợp về Numpy &amp; Pandas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">MongoDB</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../database/mongo.html">MongoDB</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
 <ul class="nav bd-sidenav">
@@ -297,7 +302,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#walrus-operator">Walrus Operator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-string">F-String</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-methods">String methods</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-operations">Set operations</a></li>
 </ul>
             </nav>
@@ -317,6 +322,58 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="n">s</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Chuỗi&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sử dụng <code class="docutils literal notranslate"><span class="pre">...</span></code> thay cho <code class="docutils literal notranslate"><span class="pre">pass</span></code> để trống một khối lệnh hoặc raise lỗi NotImplementedError</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_function</span><span class="p">():</span>
+    <span class="o">...</span>
+
+</pre></div>
+</div>
+<p>Nên viết tài liệu cho hàm xử lý, giải thích các biến</p>
+<p>Sử dụng <code class="docutils literal notranslate"><span class="pre">*</span></code> như một tham số của hàm để bắt người dùng nhập vào phải chứa thông tin tham số hàm</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="o">...</span>
+    
+<span class="n">my_func</span><span class="p">(</span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sử dụng fr hoặc rf trước chuỗi để tạo f-string cho phép sử dụng các biến trong chuỗi chứ các ký tự đặc biệt</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">custom_folder</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;New folder&quot;</span>
+
+<span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">fr</span><span class="s1">&#39;C:\Users\vanna\Downloads\</span><span class="si">{</span><span class="n">custom_folder</span><span class="si">}</span><span class="s1">\a.txt&#39;</span>
+<span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">custom_folder</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;New folder&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sa">fr</span><span class="s1">&#39;C:\Users\vanna\Downloads\</span><span class="si">{</span><span class="n">custom_folder</span><span class="si">}</span><span class="s1">\a.txt&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+<span class="nn">File ~\.conda\envs\.env\Lib\site-packages\IPython\core\interactiveshell.py:310,</span> in <span class="ni">_modified_open</span><span class="nt">(file, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}:</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">305</span>         <span class="sa">f</span><span class="s2">&quot;IPython won&#39;t let you open fd=</span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> by default &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">306</span>         <span class="s2">&quot;as it is likely to crash IPython. If you know what you are doing, &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">307</span>         <span class="s2">&quot;you can use builtins&#39; open.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">308</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">310</span> <span class="k">return</span> <span class="n">io_open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;C:\\Users\\vanna\\Downloads\\New folder\\a.txt&#39;
 </pre></div>
 </div>
 </div>
@@ -351,8 +408,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="f-string">
-<h2>F-String<a class="headerlink" href="#f-string" title="Link to this heading">#</a></h2>
+<section id="string-methods">
+<h2>String methods<a class="headerlink" href="#string-methods" title="Link to this heading">#</a></h2>
 <p>Có thể sử dụng ‘_’ để phân tách hàng của số để dễ đọc</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -427,6 +484,38 @@ ____________I Love U
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a + b = 8
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sử dụng <code class="docutils literal notranslate"><span class="pre">center</span></code> để căn giữa string</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;I Love U&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>...........I Love U...........
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sử dụng <code class="docutils literal notranslate"><span class="pre">ljust</span></code> <code class="docutils literal notranslate"><span class="pre">rjust</span></code> để thêm ký tự bên phải, trái của chuỗi</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;I Love U&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I Love U............
+............I Love U
 </pre></div>
 </div>
 </div>
@@ -565,7 +654,7 @@ ____________I Love U
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#walrus-operator">Walrus Operator</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-string">F-String</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-methods">String methods</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-operations">Set operations</a></li>
 </ul>
   </nav></div>

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -186,6 +186,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../data-science/numpy-pandas/numpy_2D.html">Numpy 2D trong Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data-science/numpy-pandas/numpy_lab.html">Bài tập: Thao tác với ma trận</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data-science/numpy-pandas/numpy_summary.html">Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-science/numpy-pandas/lab_numpy_pandas.html">Bài tập tổng hợp về Numpy &amp; Pandas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">MongoDB</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../data-science/database/mongo.html">MongoDB</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
 <ul class="current nav bd-sidenav">
@@ -2872,7 +2877,9 @@ Number of data points: 150
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training size: 100
-Test size    : 50
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Test size    : 50
 </pre></div>
 </div>
 </div>
@@ -2894,17 +2901,17 @@ Test size    : 50
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Print results for 20 test data points:
-Predicted labels:  [1 0 1 1 2 1 0 0 2 1 1 1 1 2 1 1 1 2 0 1]
-Ground truth    :  [1 0 1 2 2 1 0 0 2 1 1 2 1 2 1 1 1 2 0 1]
+Predicted labels:  [0 2 0 2 2 2 0 1 0 2 1 1 0 0 1 2 0 1 2 1]
+Ground truth    :  [0 2 0 2 2 1 0 1 0 2 1 1 0 0 1 1 0 1 1 1]
 Accuracy of 10NN with major voting: 94.00 %
               precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        19
-           1       0.82      1.00      0.90        14
-           2       1.00      0.82      0.90        17
+           0       1.00      1.00      1.00        18
+           1       1.00      0.80      0.89        15
+           2       0.85      1.00      0.92        17
 
     accuracy                           0.94        50
-   macro avg       0.94      0.94      0.94        50
+   macro avg       0.95      0.93      0.94        50
 weighted avg       0.95      0.94      0.94        50
 </pre></div>
 </div>
@@ -2922,16 +2929,16 @@ weighted avg       0.95      0.94      0.94        50
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy of 10NN with major voting: 96.00 %
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy of 10NN with major voting: 94.00 %
               precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        19
-           1       0.88      1.00      0.93        14
-           2       1.00      0.88      0.94        17
+           0       1.00      1.00      1.00        18
+           1       1.00      0.80      0.89        15
+           2       0.85      1.00      0.92        17
 
-    accuracy                           0.96        50
-   macro avg       0.96      0.96      0.96        50
-weighted avg       0.96      0.96      0.96        50
+    accuracy                           0.94        50
+   macro avg       0.95      0.93      0.94        50
+weighted avg       0.95      0.94      0.94        50
 </pre></div>
 </div>
 </div>
@@ -2951,18 +2958,16 @@ weighted avg       0.96      0.96      0.96        50
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy of 10NN with major voting: 96.00 %
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy of 10NN with major voting: 94.00 %
+              precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        19
-           1       0.88      1.00      0.93        14
-           2       1.00      0.88      0.94        17
+           0       1.00      1.00      1.00        18
+           1       1.00      0.80      0.89        15
+           2       0.85      1.00      0.92        17
 
-    accuracy                           0.96        50
-   macro avg       0.96      0.96      0.96        50
-weighted avg       0.96      0.96      0.96        50
+    accuracy                           0.94        50
+   macro avg       0.95      0.93      0.94        50
+weighted avg       0.95      0.94      0.94        50
 </pre></div>
 </div>
 </div>
@@ -3742,8 +3747,8 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">61</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span>
