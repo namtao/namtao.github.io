@@ -198,6 +198,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Database</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../database/sql.html"><a href="https://www.geeksforgeeks.org/sql-tutorial/" target="_blank">SQL</a></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../database/mongo.html">MongoDB</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
@@ -360,19 +361,19 @@ Tạo ma trận 5x5 ngẫu nhiên và thực hiện các thao tác sau:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eigenvalues = [ 2.16156364+0.j         -0.53292892+0.59341443j -0.53292892-0.59341443j
-  0.00873703+0.18131577j  0.00873703-0.18131577j]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eigenvalues = [ 2.58422347+0.j          0.72756961+0.j         -0.55011869+0.j
+ -0.11951547+0.30598853j -0.11951547-0.30598853j]
 
-eigenvectors = [[ 0.25129011+0.j         -0.11403308-0.35609051j -0.11403308+0.35609051j
-   0.69275923+0.j          0.69275923-0.j        ]
- [ 0.32052341+0.j          0.21464184+0.47306138j  0.21464184-0.47306138j
-   0.25039166+0.06626059j  0.25039166-0.06626059j]
- [ 0.43858436+0.j          0.27286241-0.22427716j  0.27286241+0.22427716j
-  -0.20457156+0.12216673j -0.20457156-0.12216673j]
- [ 0.52785744+0.j         -0.56930072+0.j         -0.56930072-0.j
-  -0.4363502 +0.03765716j -0.4363502 -0.03765716j]
- [ 0.60260128+0.j          0.37428847+0.03726269j  0.37428847-0.03726269j
-  -0.34182426-0.29590636j -0.34182426+0.29590636j]]
+eigenvectors = [[ 0.62141988+0.j          0.61620702+0.j         -0.29001431+0.j
+   0.09383027+0.07899551j  0.09383027-0.07899551j]
+ [ 0.46722978+0.j         -0.34691586+0.j          0.67259895+0.j
+   0.18269991+0.47953915j  0.18269991-0.47953915j]
+ [ 0.24214431+0.j         -0.64375642+0.j         -0.41960808+0.j
+   0.26715776-0.40853278j  0.26715776+0.40853278j]
+ [ 0.30655994+0.j          0.17159957+0.j         -0.36121114+0.j
+  -0.63005201+0.j         -0.63005201-0.j        ]
+ [ 0.49286995+0.j          0.23679012+0.j          0.39617915+0.j
+   0.1783377 -0.23361587j  0.1783377 +0.23361587j]]
 </pre></div>
 </div>
 </div>
@@ -445,8 +446,8 @@ Thực hiện phân tích thống kê trên tập dữ liệu bai3.csv bằng Nu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                      </span>Traceback (most recent call last)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">--------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Load dataset</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;bai3.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>

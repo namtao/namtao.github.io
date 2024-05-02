@@ -45,8 +45,8 @@ ax.set(xlabel='Epoch',ylabel='Loss',title='Loss vs Epoch')
 ------------------
 
 
-[1;31m------------------------------------------------------------------------[0m
-[1;31mValueError[0m                             Traceback (most recent call last)
+[1;31m--------------------------------------------------------------------------[0m
+[1;31mValueError[0m                               Traceback (most recent call last)
 Cell [1;32mIn[2], line 23[0m
 [0;32m     20[0m models, losses, pred_0 [38;5;241m=[39m G[38;5;241m.[39mtrain(X_train,y_train)
 [0;32m     22[0m sns[38;5;241m.[39mset_style([38;5;124m'[39m[38;5;124mdarkgrid[39m[38;5;124m'[39m)
