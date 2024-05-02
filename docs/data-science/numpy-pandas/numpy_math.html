@@ -1,0 +1,845 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Các hàm toán học trong Numpy &#8212; Artificial Brains</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/data-science/numpy-pandas/numpy_math';</script>
+    <link rel="icon" href="../../../_static/favicon(1).ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Các hàm thống kê trong Numpy" href="numpy_statics.html" />
+    <link rel="prev" title="PEP-8" href="../../python/pep_8.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Artificial Brains - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Artificial Brains - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python basic</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../python/note.html">Các lưu ý trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/string_method.html">String methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/walrus_operator.html">Walrus Operator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/set_operations.html">Set operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/for_while.html">For - While</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/list_set_dict.html">List - Set - Dictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/lambda_map_filter_reduce.html">Lambda - Map - Filter - Reduce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/regex.html">Regex trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/file_handle.html">Xử lý File trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/module.html">Module trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/decorator.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/pep_8.html"><a href="https://realpython.com/python-pep8" target="_blank">PEP-8</a></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numpy &amp; Pandas</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Các hàm toán học trong Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy_statics.html">Các hàm thống kê trong Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy_1D.html">Numpy 1D trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy_2D.html">Numpy 2D trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy_lab.html">Bài tập: Thao tác với ma trận</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy_summary.html">Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab_numpy_pandas.html">Bài tập tổng hợp về Numpy &amp; Pandas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Database</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../database/mongo.html">MongoDB</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/theory.html">Lý thuyết</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/knn.html">K-Nearest Neighbors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/decision_tree.html">Decision tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/random_forest.html">Random forest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/ada_boost.html">Ada Boost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/gradient_boost.html">Gradient Boost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/xg_boost.html">XG Boost</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Các hàm toán học trong Numpy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-ham-luong-giac">1. Các Hàm Lượng Giác</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-ham-so-hoc">2. Các Hàm Số Học</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-ham-lam-tron">3. Các Hàm Làm Tròn</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="cac-ham-toan-hoc-trong-numpy">
+<h1>Các hàm toán học trong Numpy<a class="headerlink" href="#cac-ham-toan-hoc-trong-numpy" title="Link to this heading">#</a></h1>
+<p>NumPy cung cấp một loạt các hàm toán học có thể được thực hiện trên các mảng.</p>
+<p>Trong tài liệu này ta sẽ tìm hiểu ba loại hàm toán học khác nhau trong NumPy:</p>
+<ol class="arabic simple">
+<li><p>Các Hàm Lượng Giác</p></li>
+<li><p>Các Hàm Số Học</p></li>
+<li><p>Các Hàm Làm Tròn</p></li>
+</ol>
+<section id="cac-ham-luong-giac">
+<h2>1. Các Hàm Lượng Giác<a class="headerlink" href="#cac-ham-luong-giac" title="Link to this heading">#</a></h2>
+<p>NumPy cung cấp một tập hợp các hàm lượng giác tiêu chuẩn để tính toán các tỉ số lượng giác (sin, cos, tan, vv.)</p>
+<p>Ta có danh sách các hàm lượng giác thường được sử dụng trong NumPy.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Hàm Lượng Giác</p></th>
+<th class="head"><p>Tính toán (theo radians)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>sin()</p></td>
+<td><p>sine của một góc</p></td>
+</tr>
+<tr class="row-odd"><td><p>cos()</p></td>
+<td><p>cosine của một góc</p></td>
+</tr>
+<tr class="row-even"><td><p>tan()</p></td>
+<td><p>tangent của một góc</p></td>
+</tr>
+<tr class="row-odd"><td><p>arcsin()</p></td>
+<td><p>arcsine (ngược lại của sin)</p></td>
+</tr>
+<tr class="row-even"><td><p>arccos()</p></td>
+<td><p>arccosine (ngược lại của cosine)</p></td>
+</tr>
+<tr class="row-odd"><td><p>arctan()</p></td>
+<td><p>arctangent (ngược lại của tangent)</p></td>
+</tr>
+<tr class="row-even"><td><p>degrees()</p></td>
+<td><p>chuyển đổi một góc từ radians sang độ</p></td>
+</tr>
+<tr class="row-odd"><td><p>radians()</p></td>
+<td><p>chuyển đổi một góc từ độ sang radians</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>sin()</strong>: Tính sine của một góc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>  <span class="c1"># Góc 45 độ</span>
+<span class="n">sine_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sin(45 độ) =&quot;</span><span class="p">,</span> <span class="n">sine_value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sin(45 độ) = 0.7071067811865476
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>cos()</strong>: Tính cosine của một góc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span>  <span class="c1"># Góc 60 độ</span>
+<span class="n">cosine_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cos(60 độ) =&quot;</span><span class="p">,</span> <span class="n">cosine_value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cos(60 độ) = 0.5000000000000001
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>tan()</strong>: Tính tangent của một góc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">6</span>  <span class="c1"># Góc 30 độ</span>
+<span class="n">tangent_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;tan(30 độ) =&quot;</span><span class="p">,</span> <span class="n">tangent_value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tan(30 độ) = 0.5773502691896257
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>arcsin()</strong>: Tính arcsine (ngược lại của sin).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">sine_value</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">sine_value</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;arcsin(0.5) =&quot;</span><span class="p">,</span> <span class="n">angle</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>arcsin(0.5) = 0.5235987755982989
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>arccos()</strong>: Tính arccosine (ngược lại của cosine).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">cosine_value</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">cosine_value</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;arccos(0.5) =&quot;</span><span class="p">,</span> <span class="n">angle</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>arccos(0.5) = 1.0471975511965979
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>arctan()</strong>: Tính arctangent (ngược lại của tangent).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">tangent_value</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">tangent_value</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;arctan(1) =&quot;</span><span class="p">,</span> <span class="n">angle</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>arctan(1) = 0.7853981633974483
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>degrees()</strong>: Chuyển đổi một góc từ radians sang độ.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">angle_radians</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span>  <span class="c1"># 90 độ</span>
+<span class="n">angle_degrees</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">angle_radians</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;90 độ bằng radians là:&quot;</span><span class="p">,</span> <span class="n">angle_degrees</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>90 độ bằng radians là: 90.0
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>radians()</strong>: Chuyển đổi một góc từ độ sang radians.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">angle_degrees</span> <span class="o">=</span> <span class="mi">180</span>  <span class="c1"># 180 độ</span>
+<span class="n">angle_radians</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angle_degrees</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;180 độ bằng radians là:&quot;</span><span class="p">,</span> <span class="n">angle_radians</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>180 độ bằng radians là: 3.141592653589793
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cac-ham-so-hoc">
+<h2>2. Các Hàm Số Học<a class="headerlink" href="#cac-ham-so-hoc" title="Link to this heading">#</a></h2>
+<p>NumPy cung cấp một loạt các hàm số học để thực hiện trên các mảng.
+Ta có danh sách các hàm số học khác nhau cùng với các toán tử tương ứng:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Phép Toán</p></th>
+<th class="head"><p>Hàm Số Học</p></th>
+<th class="head"><p>Toán Tử</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Cộng</p></td>
+<td><p>add()</p></td>
+<td><p>+</p></td>
+</tr>
+<tr class="row-odd"><td><p>Trừ</p></td>
+<td><p>subtract()</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-even"><td><p>Nhân</p></td>
+<td><p>multiply()</p></td>
+<td><p>*</p></td>
+</tr>
+<tr class="row-odd"><td><p>Chia</p></td>
+<td><p>divide()</p></td>
+<td><p>/</p></td>
+</tr>
+<tr class="row-even"><td><p>Lũy Thừa</p></td>
+<td><p>power()</p></td>
+<td><p>**</p></td>
+</tr>
+<tr class="row-odd"><td><p>Phần dư</p></td>
+<td><p>mod()</p></td>
+<td><p>%</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Tạo hai mảng numpy</span>
+<span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cộng hai mảng</span>
+<span class="n">sum_result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span> <span class="n">array2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tổng của hai mảng:&quot;</span><span class="p">,</span> <span class="n">sum_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tổng của hai mảng: [ 6  8 10 12]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trừ hai mảng</span>
+<span class="n">difference_result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span> <span class="n">array2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hiệu của hai mảng:&quot;</span><span class="p">,</span> <span class="n">difference_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hiệu của hai mảng: [-4 -4 -4 -4]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nhân hai mảng</span>
+<span class="n">product_result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span> <span class="n">array2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tích của hai mảng:&quot;</span><span class="p">,</span> <span class="n">product_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tích của hai mảng: [ 5 12 21 32]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Chia hai mảng</span>
+<span class="n">quotient_result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span> <span class="n">array2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thương của hai mảng:&quot;</span><span class="p">,</span> <span class="n">quotient_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thương của hai mảng: [0.2        0.33333333 0.42857143 0.5       ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Chia hai mảng</span>
+<span class="n">quotient_result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span> <span class="n">array2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thương của hai mảng:&quot;</span><span class="p">,</span> <span class="n">quotient_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Thương của hai mảng: [0.2        0.33333333 0.42857143 0.5       ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lũy thừa của mảng 1 với mảng 2</span>
+<span class="n">power_result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span> <span class="n">array2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lũy thừa của mảng 1 với mảng 2:&quot;</span><span class="p">,</span> <span class="n">power_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lũy thừa của mảng 1 với mảng 2: [    1    64  2187 65536]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Phần dư của hai mảng</span>
+<span class="n">modulus_result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span> <span class="n">array2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Phần dư của hai mảng:&quot;</span><span class="p">,</span> <span class="n">modulus_result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Phần dư của hai mảng: [1 2 3 4]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cac-ham-lam-tron">
+<h2>3. Các Hàm Làm Tròn<a class="headerlink" href="#cac-ham-lam-tron" title="Link to this heading">#</a></h2>
+<p>Chúng ta sử dụng các hàm làm tròn để làm tròn các giá trị trong một mảng đến một số thập phân cụ thể.</p>
+<p>Danh sách các hàm làm tròn trong NumPy thường được sử dụng:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Các Hàm Làm Tròn</p></th>
+<th class="head"><p>Ý nghĩa</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>round()</p></td>
+<td><p>làm tròn giá trị đến độ chính xác mong muốn</p></td>
+</tr>
+<tr class="row-odd"><td><p>floor()</p></td>
+<td><p>làm tròn các giá trị trong mảng xuống gần nhất thành số nguyên nhỏ hơn mỗi phần tử</p></td>
+</tr>
+<tr class="row-even"><td><p>ceil()</p></td>
+<td><p>làm tròn các giá trị trong mảng lên gần nhất thành số nguyên lớn hơn mỗi phần tử</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>round()</strong>: Làm tròn giá trị đến độ chính xác mong muốn.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.23</span><span class="p">,</span> <span class="mf">2.78</span><span class="p">,</span> <span class="mf">4.56</span><span class="p">,</span> <span class="mf">5.89</span><span class="p">])</span>
+<span class="n">rounded_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Giá trị đã làm tròn:&quot;</span><span class="p">,</span> <span class="n">rounded_values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Giá trị đã làm tròn: [1.2 2.8 4.6 5.9]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>floor()</strong>: Làm tròn các giá trị trong mảng xuống gần nhất thành số nguyên nhỏ hơn mỗi phần tử.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.23</span><span class="p">,</span> <span class="mf">2.78</span><span class="p">,</span> <span class="mf">4.56</span><span class="p">,</span> <span class="mf">5.89</span><span class="p">])</span>
+<span class="n">floored_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Giá trị đã làm tròn xuống:&quot;</span><span class="p">,</span> <span class="n">floored_values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Giá trị đã làm tròn xuống: [1. 2. 4. 5.]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>ceil()</strong>: Làm tròn các giá trị trong mảng lên gần nhất thành số nguyên lớn hơn mỗi phần tử.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.23</span><span class="p">,</span> <span class="mf">2.78</span><span class="p">,</span> <span class="mf">4.56</span><span class="p">,</span> <span class="mf">5.89</span><span class="p">])</span>
+<span class="n">ceiled_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Giá trị đã làm tròn lên:&quot;</span><span class="p">,</span> <span class="n">ceiled_values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Giá trị đã làm tròn lên: [2. 3. 5. 6.]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs\data-science\numpy-pandas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../python/pep_8.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><a href="https://realpython.com/python-pep8" target="_blank">PEP-8</a></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="numpy_statics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Các hàm thống kê trong Numpy</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-ham-luong-giac">1. Các Hàm Lượng Giác</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-ham-so-hoc">2. Các Hàm Số Học</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cac-ham-lam-tron">3. Các Hàm Làm Tròn</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Van Nam Nguyen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

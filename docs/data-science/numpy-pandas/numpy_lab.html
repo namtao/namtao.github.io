@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Bài tập: Thao tác với ma trận &#8212; Artificial Brains</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/data-science/numpy-pandas/numpy_lab';</script>
+    <link rel="icon" href="../../../_static/favicon(1).ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Summary" href="numpy_summary.html" />
+    <link rel="prev" title="Numpy 2D trong Python" href="numpy_2D.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="Artificial Brains - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="Artificial Brains - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python basic</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../python/note.html">Các lưu ý trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/string_method.html">String methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/walrus_operator.html">Walrus Operator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/set_operations.html">Set operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/for_while.html">For - While</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/list_set_dict.html">List - Set - Dictionary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/lambda_map_filter_reduce.html">Lambda - Map - Filter - Reduce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/regex.html">Regex trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/file_handle.html">Xử lý File trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/module.html">Module trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/decorator.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../python/pep_8.html"><a href="https://realpython.com/python-pep8" target="_blank">PEP-8</a></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Numpy &amp; Pandas</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="numpy_math.html">Các hàm toán học trong Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy_statics.html">Các hàm thống kê trong Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy_1D.html">Numpy 1D trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy_2D.html">Numpy 2D trong Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Bài tập: Thao tác với ma trận</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy_summary.html">Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab_numpy_pandas.html">Bài tập tổng hợp về Numpy &amp; Pandas</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Database</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../database/mongo.html">MongoDB</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/theory.html">Lý thuyết</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/knn.html">K-Nearest Neighbors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/decision_tree.html">Decision tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/random_forest.html">Random forest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/ada_boost.html">Ada Boost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/gradient_boost.html">Gradient Boost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../algorithm/xg_boost.html">XG Boost</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Bài tập: Thao tác với ma trận</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-1-thao-tac-voi-ma-tran">Bài 1: Thao tác với ma trận</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-tap-2-optimization">Bài tập 2: Optimization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-tap-3-phan-tich-thong-ke">Bài tập 3: Phân tích thống kê</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-4-thao-tac-voi-tensor">Bài 4: Thao tác với tensor</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="bai-tap-thao-tac-voi-ma-tran">
+<h1>Bài tập: Thao tác với ma trận<a class="headerlink" href="#bai-tap-thao-tac-voi-ma-tran" title="Link to this heading">#</a></h1>
+<section id="bai-1-thao-tac-voi-ma-tran">
+<h2>Bài 1: Thao tác với ma trận<a class="headerlink" href="#bai-1-thao-tac-voi-ma-tran" title="Link to this heading">#</a></h2>
+<p><strong>Lý thuyết</strong>:<br />
+NumPy cung cấp các công cụ mạnh mẽ để thao tác ma trận, bao gồm tính toán các định thức, tìm nghịch đảo và tính toán các giá trị riêng và vectơ riêng.</p>
+<p><strong>Đề bài</strong>:<br />
+Tạo ma trận 5x5 ngẫu nhiên và thực hiện các thao tác sau:</p>
+<ul class="simple">
+<li><p>Tính định thức (determinant) của ma trận.</p></li>
+<li><p>Tìm nghịch đảo (transpose) của ma trận.</p></li>
+<li><p>Tính các giá trị riêng (eigent value) và vectơ riêng (eigent vector) của ma trận.<br />
+(Phần này sẽ liên quan tới đại số tuyến tính, mọi người có thể tự tìm hiểu để hiểu chi tiết về các khái niệm trên)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Generate a random 5x5 matrix</span>
+<span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Compute determinant</span>
+<span class="n">det</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+
+<span class="c1"># Find inverse</span>
+<span class="n">inverse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+
+<span class="c1"># Calculate eigenvalues and eigenvectors</span>
+<span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;eigenvalues = </span><span class="si">{</span><span class="n">eigenvalues</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;eigenvectors = </span><span class="si">{</span><span class="n">eigenvectors</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eigenvalues = [ 2.16156364+0.j         -0.53292892+0.59341443j -0.53292892-0.59341443j
+  0.00873703+0.18131577j  0.00873703-0.18131577j]
+
+eigenvectors = [[ 0.25129011+0.j         -0.11403308-0.35609051j -0.11403308+0.35609051j
+   0.69275923+0.j          0.69275923-0.j        ]
+ [ 0.32052341+0.j          0.21464184+0.47306138j  0.21464184-0.47306138j
+   0.25039166+0.06626059j  0.25039166-0.06626059j]
+ [ 0.43858436+0.j          0.27286241-0.22427716j  0.27286241+0.22427716j
+  -0.20457156+0.12216673j -0.20457156-0.12216673j]
+ [ 0.52785744+0.j         -0.56930072+0.j         -0.56930072-0.j
+  -0.4363502 +0.03765716j -0.4363502 -0.03765716j]
+ [ 0.60260128+0.j          0.37428847+0.03726269j  0.37428847-0.03726269j
+  -0.34182426-0.29590636j -0.34182426+0.29590636j]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bai-tap-2-optimization">
+<h2>Bài tập 2: Optimization<a class="headerlink" href="#bai-tap-2-optimization" title="Link to this heading">#</a></h2>
+<p><strong>Lý thuyết:</strong><br />
+Gradient descent là một thuật toán tối ưu hóa được sử dụng để cực tiểu hóa hàm bằng cách di chuyển lặp đi lặp lại theo hướng dốc xuống.</p>
+<p><strong>Đề bài:</strong><br />
+Triển khai gradient descent sử dụng NumPy để tối ưu hàm số sau:
+$<span class="math notranslate nohighlight">\( f(x) = x^2 + 5 \sin(x) \)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">gradient_descent</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">iterations</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
+        <span class="n">gradient</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># Đạo hàm riêng theo x</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">gradient</span> <span class="c1"># Cập nhật tham số</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="c1"># Khởi tạo các hyperparameters</span>
+<span class="n">x_initial</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># Input đầu vào</span>
+<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="c1"># Tốc độ học</span>
+<span class="n">iterations</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># Số lần lặp</span>
+
+<span class="c1"># Run gradient descent</span>
+<span class="n">minima</span> <span class="o">=</span> <span class="n">gradient_descent</span><span class="p">(</span><span class="n">x_initial</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">iterations</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">minima</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.110510503581112
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bai-tap-3-phan-tich-thong-ke">
+<h2>Bài tập 3: Phân tích thống kê<a class="headerlink" href="#bai-tap-3-phan-tich-thong-ke" title="Link to this heading">#</a></h2>
+<p><strong>Lý thuyết</strong>:<br />
+NumPy cung cấp các chức năng để phân tích thống kê, bao gồm tính toán giá trị trung bình (mean), trung vị (median), độ lệch chuẩn (standard deviation) và mối tương quan (correlation).</p>
+<p><strong>Đề Bài</strong>:<br />
+Thực hiện phân tích thống kê trên tập dữ liệu bai3.csv bằng NumPy:</p>
+<ul class="simple">
+<li><p>Tính giá trị trung bình, trung vị và độ lệch chuẩn của tập dữ liệu.</p></li>
+<li><p>Tính toán ma trận tương quan giữa các biến khác nhau.</p></li>
+<li><p>Xác định các ngoại lệ trong tập dữ liệu bằng cách sử dụng điểm z.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load dataset</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;bai3.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Calculate mean, median, and standard deviation</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">median</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">std_dev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Compute correlation matrix</span>
+<span class="n">correlation_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">rowvar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Identify outliers using z-scores</span>
+<span class="n">z_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">data</span> <span class="o">-</span> <span class="n">mean</span><span class="p">)</span> <span class="o">/</span> <span class="n">std_dev</span><span class="p">)</span>
+<span class="n">outliers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">z_scores</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                      </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Load dataset</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;bai3.csv&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Calculate mean, median, and standard deviation</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nn">File ~\.conda\envs\.env\Lib\site-packages\numpy\lib\npyio.py:1373,</span> in <span class="ni">loadtxt</span><span class="nt">(fname, dtype, comments, delimiter, converters, skiprows, usecols, unpack, ndmin, encoding, max_rows, quotechar, like)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1370</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">delimiter</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1371</span>     <span class="n">delimiter</span> <span class="o">=</span> <span class="n">delimiter</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;latin1&#39;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1373</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">_read</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="n">comment</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="n">delimiter</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1374</span>             <span class="n">converters</span><span class="o">=</span><span class="n">converters</span><span class="p">,</span> <span class="n">skiplines</span><span class="o">=</span><span class="n">skiprows</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="n">usecols</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1375</span>             <span class="n">unpack</span><span class="o">=</span><span class="n">unpack</span><span class="p">,</span> <span class="n">ndmin</span><span class="o">=</span><span class="n">ndmin</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1376</span>             <span class="n">max_rows</span><span class="o">=</span><span class="n">max_rows</span><span class="p">,</span> <span class="n">quote</span><span class="o">=</span><span class="n">quotechar</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1378</span> <span class="k">return</span> <span class="n">arr</span>
+
+<span class="nn">File ~\.conda\envs\.env\Lib\site-packages\numpy\lib\npyio.py:992,</span> in <span class="ni">_read</span><span class="nt">(fname, delimiter, comment, quote, imaginary_unit, usecols, skiplines, max_rows, converters, ndmin, unpack, dtype, encoding)</span>
+<span class="g g-Whitespace">    </span><span class="mi">990</span>     <span class="n">fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">fspath</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">991</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">992</span>     <span class="n">fh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">_datasource</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;rt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">993</span>     <span class="k">if</span> <span class="n">encoding</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">994</span>         <span class="n">encoding</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fh</span><span class="p">,</span> <span class="s1">&#39;encoding&#39;</span><span class="p">,</span> <span class="s1">&#39;latin1&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~\.conda\envs\.env\Lib\site-packages\numpy\lib\_datasource.py:193,</span> in <span class="ni">open</span><span class="nt">(path, mode, destpath, encoding, newline)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span><span class="sd"> Open `path` with `mode` and return the file object.</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">192</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">DataSource</span><span class="p">(</span><span class="n">destpath</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">193</span> <span class="k">return</span> <span class="n">ds</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
+
+<span class="nn">File ~\.conda\envs\.env\Lib\site-packages\numpy\lib\_datasource.py:533,</span> in <span class="ni">DataSource.open</span><span class="nt">(self, path, mode, encoding, newline)</span>
+<span class="g g-Whitespace">    </span><span class="mi">530</span>     <span class="k">return</span> <span class="n">_file_openers</span><span class="p">[</span><span class="n">ext</span><span class="p">](</span><span class="n">found</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">531</span>                               <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="n">newline</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">532</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">533</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2"> not found.&quot;</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: bai3.csv not found.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bai-4-thao-tac-voi-tensor">
+<h2>Bài 4: Thao tác với tensor<a class="headerlink" href="#bai-4-thao-tac-voi-tensor" title="Link to this heading">#</a></h2>
+<p>Đề cho một tensor đại diện cho một hình ảnh thang độ xám. Thực hiện các thao tác sau:</p>
+<ol class="arabic simple">
+<li><p>Reshape: Reshape tensor thành một hình dạng khác trong khi vẫn đảm bảo tổng số phần tử không đổi.</p></li>
+<li><p>Transpose: Transpose tensor dọc theo các trục được chỉ định.</p></li>
+<li><p>Slice: Trích xuất một tập hợp con của tensor bằng cách cắt dọc theo các kích thước được chỉ định.</p></li>
+<li><p>Concatenate: Concatenate nhiều tensor dọc theo các trục được chỉ định.</p></li>
+<li><p>Các phép toán theo phần tử: Thực hiện các phép toán theo phần tử như cộng, trừ, nhân và chia với các giá trị vô hướng hoặc các tensor khác.</p></li>
+<li><p>Hoạt động rút gọn: Thực hiện các hoạt động rút gọn như tính tổng, trung bình, tối thiểu và tối đa dọc theo các trục được chỉ định.</p></li>
+<li><p>Indexing: Truy cập các phần tử riêng lẻ hoặc các tensor phụ bằng cách sử dụng các chỉ số nguyên hoặc boolean mark.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_tensor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="c1"># 1. Reshape the tensor</span>
+<span class="n">reshaped_tensor</span> <span class="o">=</span> <span class="n">image_tensor</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+
+<span class="c1"># 2. Transpose the tensor</span>
+<span class="n">transposed_tensor</span> <span class="o">=</span> <span class="n">image_tensor</span><span class="o">.</span><span class="n">T</span>
+
+<span class="c1"># 3. Slice the tensor</span>
+<span class="n">sliced_tensor</span> <span class="o">=</span> <span class="n">image_tensor</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># 4. Concatenate tensors</span>
+<span class="n">concatenated_tensor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">image_tensor</span><span class="p">,</span> <span class="n">image_tensor</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># 5. Element-wise operations</span>
+<span class="n">added_tensor</span> <span class="o">=</span> <span class="n">image_tensor</span> <span class="o">+</span> <span class="mf">0.1</span>
+<span class="n">multiplied_tensor</span> <span class="o">=</span> <span class="n">image_tensor</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="c1"># 6. Reduction operations</span>
+<span class="n">sum_tensor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">image_tensor</span><span class="p">)</span>
+<span class="n">mean_tensor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">image_tensor</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">max_tensor</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">image_tensor</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># 7. Indexing</span>
+<span class="n">element</span> <span class="o">=</span> <span class="n">image_tensor</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs\data-science\numpy-pandas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="numpy_2D.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Numpy 2D trong Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="numpy_summary.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Summary</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-1-thao-tac-voi-ma-tran">Bài 1: Thao tác với ma trận</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-tap-2-optimization">Bài tập 2: Optimization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-tap-3-phan-tich-thong-ke">Bài tập 3: Phân tích thống kê</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-4-thao-tac-voi-tensor">Bài 4: Thao tác với tensor</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Van Nam Nguyen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
