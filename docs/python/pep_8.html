@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -182,7 +182,7 @@
 <li class="toctree-l1"><a class="reference internal" href="file_handle.html">Xử lý File trong Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="module.html">Module trong Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="decorator.html">Decorators</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><a href="https://realpython.com/python-pep8" target="_blank">PEP-8</a></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">PEP-8</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Numpy &amp; Pandas</span></p>
 <ul class="nav bd-sidenav">
@@ -211,7 +211,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Books</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../books.html">Tài liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../books.html">Data Science</a></li>
 </ul>
 
     </div>
@@ -289,7 +289,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -300,11 +302,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><a href="https://realpython.com/python-pep8" target="_blank">PEP-8</a></h1>
+    <h1>PEP-8</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#style-guide"><a href="https://peps.python.org/pep-0008/" target="_blank">Style Guide</a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-python"><a href="https://realpython.com/python-pep8" target="_blank">Real Python</a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-python-coding-style"><a href="https://python.pages.doc.ic.ac.uk/2020/modules/module-buildingblocks/style" target="_blank">Good Python Coding Style</a></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -315,7 +327,135 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pep-8">
-<h1><a href="https://realpython.com/python-pep8" target="_blank">PEP-8</a><a class="headerlink" href="#pep-8" title="Link to this heading">#</a></h1>
+<h1>PEP-8<a class="headerlink" href="#pep-8" title="Link to this heading">#</a></h1>
+<ul>
+<li><p>Thụt lề sao cho các thành phần giống nhau được thẳng hàng nhau</p></li>
+<li><p>Sử dụng tab để thụt lề</p></li>
+<li><p>Độ dài dòng tối đa là 79, đối với đoạn văn dài thì tối đa 72 ký tự</p></li>
+<li><p>Nên ngắt dòng trước các toán tử</p></li>
+<li><p>Thêm dòng trống giữa:</p>
+<ul class="simple">
+<li><p>Các class và top-level function cách nhau bằng 2 dòng trống;</p></li>
+<li><p>Các phương thức bên trong lớp cách nhau bằng 1 dòng trống;</p></li>
+<li><p>Các nhóm chức năng, các phần logic phân cách nhau bằng 1 dòng trống</p></li>
+</ul>
+</li>
+<li><p>Sử dụng encoding là UTF-8</p></li>
+<li><p>Import thư viện luôn ở đầu mỗi tệp, thứ tự ưu tiên là: thư viện chuẩn =&gt; thư viện thứ ba =&gt; thư viên tự định nghĩa</p></li>
+<li><p>Tránh khoảng trắng không liên quan trong các trường hợp sau</p>
+<ul class="simple">
+<li><p>Ngay bên trong dấu ngoặc đơn, dấu ngoặc hoặc dấu ngoặc nhọn</p></li>
+<li><p>Giữa dấu phẩy ở cuối và dấu ngoặc đơn đóng sau</p></li>
+<li><p>Ngay trước dấu phẩy, dấu chấm phẩy hoặc dấu hai chấm</p></li>
+<li><p>Ngay trước dấu ngoặc đơn mở bắt đầu danh sách đối số của lệnh gọi hàm</p></li>
+<li><p>Ngay trước dấu ngoặc đơn mở bắt đầu lập chỉ mục hoặc cắt</p></li>
+<li><p>Nhiều khoảng trắng xung quanh toán tử gán (hoặc toán tử khác) để căn chỉnh nó với toán tử khác</p></li>
+<li><p>Luôn bao quanh các toán tử nhị phân này bằng một khoảng trắng ở hai bên</p></li>
+<li><p>Nếu sử dụng các toán tử có mức độ ưu tiên khác nhau, hãy cân nhắc thêm khoảng trắng xung quanh các toán tử có mức độ ưu tiên thấp nhất. Tuy nhiên, không bao giờ sử dụng nhiều hơn một khoảng trắng và luôn có cùng khoảng trắng ở cả hai phía của toán tử nhị phân</p></li>
+<li><p>Chú thích chức năng nên sử dụng các quy tắc thông thường cho dấu hai chấm và luôn có khoảng trắng xung quanh -&gt; mũi tên nếu có</p></li>
+<li><p>Không sử dụng khoảng trắng xung quanh = khi được sử dụng để biểu thị đối số từ khóa hoặc khi được sử dụng để biểu thị giá trị mặc định cho tham số hàm không được chú thích. Tuy nhiên, khi kết hợp chú thích đối số với giá trị mặc định, hãy sử dụng khoảng trắng xung quanh =</p></li>
+<li><p>Các câu lệnh ghép (nhiều câu lệnh trên cùng một dòng) thường không được khuyến khích</p></li>
+</ul>
+</li>
+<li><p>Dấu phẩy ở cuối thường là tùy chọn, ngoại trừ chúng là bắt buộc khi tạo một bộ gồm một phần tử. Để rõ ràng, nên đặt phần sau trong dấu ngoặc đơn (dự phòng về mặt kỹ thuật)</p></li>
+<li><p>Comment</p>
+<ul class="simple">
+<li><p>Nên viết bằng tiếng Anh</p></li>
+<li><p>Không comment cùng với dòng code</p></li>
+<li><p>Sử dụng Documentation Strings</p></li>
+</ul>
+</li>
+<li><p>Quy ước đặt tên</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Naming Convention</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Function</td>
+<td>Use a lowercase word or words. Separate words by underscores to improve readability.</td>
+<td><code>function</code>, <code>python_function</code></td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Use a lowercase single letter, word, or words. Separate words with underscores to improve readability.</td>
+<td><code>x</code>, <code>var</code>, <code>python_variable</code></td>
+</tr>
+<tr>
+<td>Class</td>
+<td>Start each word with a capital letter. Don’t separate words with underscores. This style is called <a href="https://en.wikipedia.org/wiki/Camel_case">camel case or Pascal case</a>.</td>
+<td><code>Model</code>, <code>PythonClass</code></td>
+</tr>
+<tr>
+<td>Method</td>
+<td>Use a lowercase word or words. Separate words with underscores to improve readability.</td>
+<td><code>class_method</code>, <code>method</code></td>
+</tr>
+<tr>
+<td>Constant</td>
+<td>Use an uppercase single letter, word, or words. Separate words with underscores to improve readability.</td>
+<td><code>CONSTANT</code>, <code>PYTHON_CONSTANT</code>, <code>PYTHON_LONG_CONSTANT</code></td>
+</tr>
+<tr>
+<td>Module</td>
+<td>Use a short, lowercase word or words. Separate words with underscores to improve readability.</td>
+<td><code>module.py</code>, <code>python_module.py</code></td>
+</tr>
+<tr>
+<td>Package</td>
+<td>Use a short, lowercase word or words. Don’t separate words with underscores.</td>
+<td><code>package</code>, <code>pythonpackage</code></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Tránh sử dụng các ký tự đơn ‘l’, ‘O’ để tránh nhầm lẫn giữa các ký tự gần giống nhau trong các bộ mã</p></li>
+<li><p>Tên package và tên module: ngắn gọn, viết thường, các từ cách nhau bằng dấu _</p></li>
+<li><p>Tên class: thường sử dụng quy ước CapWords</p></li>
+<li><p>Tên biến global: quy ước cũng gần giống như các quy ước dành cho hàm</p></li>
+<li><p>Tên hàm và biến: phải viết thường, với các từ được phân tách bằng dấu gạch dưới _</p></li>
+<li><p>Đối số hàm và phương thức</p>
+<ul>
+<li><p>Luôn sử dụng self đối số đầu tiên cho các phương thức gốc.</p></li>
+<li><p>Luôn sử dụng cls làm đối số đầu tiên cho các phương thức lớp.</p></li>
+</ul>
+</li>
+<li><p>Tên phương thức và biến instance</p>
+<ul>
+<li><p>Sử dụng quy tắc đặt tên hàm: chữ thường với các từ được phân tách bằng dấu gạch dưới _</p></li>
+<li><p>Chỉ sử dụng một dấu gạch dưới hàng đầu cho các phương thức không công khai và các biến thể hiện</p></li>
+<li><p>Để tránh xung đột tên với các lớp con, hãy sử dụng hai dấu gạch dưới ở đầu để gọi các quy tắc xáo trộn tên của Python</p></li>
+</ul>
+</li>
+<li><p>Hằng số: viết bằng tất cả các chữ cái in hoa với các từ phân cách bằng dấu gạch dưới _</p></li>
+</ul>
+</li>
+<li><p>Khuyến nghị:</p>
+<ul class="simple">
+<li><p>Việc so sánh với các đơn vị như Không phải luôn luôn được thực hiện với is hoặc is not, không bao giờ sử dụng các toán tử đẳng thức.</p></li>
+<li><p>Sử dụng is not thay vì not … is</p></li>
+<li><p>Luôn sử dụng câu lệnh def thay vì câu lệnh gán liên kết trực tiếp biểu thức lambda với mã định danh</p></li>
+<li><p>Sử dụng with block khi có thể</p></li>
+<li><p>Sử dụng ‘’.startswith() và ‘’.endswith() thay vì cắt chuỗi để kiểm tra tiền tố hoặc hậu tố</p></li>
+<li><p>So sánh loại đối tượng phải luôn sử dụng isinstance() thay vì so sánh trực tiếp các loại</p></li>
+<li><p>Không so sánh các giá trị boolean với True hoặc False bằng cách sử dụng ==</p></li>
+<li><p>Không sử dụng return/break/continue trong try…finally</p></li>
+</ul>
+</li>
+</ul>
+<section id="style-guide">
+<h2><a href="https://peps.python.org/pep-0008/" target="_blank">Style Guide</a><a class="headerlink" href="#style-guide" title="Link to this heading">#</a></h2>
+</section>
+<section id="real-python">
+<h2><a href="https://realpython.com/python-pep8" target="_blank">Real Python</a><a class="headerlink" href="#real-python" title="Link to this heading">#</a></h2>
+</section>
+<section id="good-python-coding-style">
+<h2><a href="https://python.pages.doc.ic.ac.uk/2020/modules/module-buildingblocks/style" target="_blank">Good Python Coding Style</a><a class="headerlink" href="#good-python-coding-style" title="Link to this heading">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -373,7 +513,22 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#style-guide"><a href="https://peps.python.org/pep-0008/" target="_blank">Style Guide</a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-python"><a href="https://realpython.com/python-pep8" target="_blank">Real Python</a></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-python-coding-style"><a href="https://python.pages.doc.ic.ac.uk/2020/modules/module-buildingblocks/style" target="_blank">Good Python Coding Style</a></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
