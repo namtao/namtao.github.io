@@ -325,18 +325,18 @@ body {
     background-color: var(--text-color);
 }
 
-.name {
+/* .name {
     background: linear-gradient(to right, var(--primary-color) 0%, #ff4757 50%, var(--primary-color) 100%);
     background-size: 200% auto;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
     transition: 0.5s;
-}
+} */
 
-.name:hover {
+/* .name:hover {
     background-position: right center;
-}
+} */
 
 /* Hiệu ứng shine cho profile image */
 .profile-img {
