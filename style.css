@@ -213,3 +213,9 @@ body {
     justify-content: center;
   }
 }
+
+@media print {
+    .theme-toggle {
+        display: none;
+    }
+}
