@@ -243,18 +243,18 @@ body {
 }
 
 /* Hiệu ứng cho experience và education items */
-.experience-item, .education-item {
+.experience-item, .education-item, .project-item {
     transition: all 0.3s ease;
     position: relative;
 }
 
-.experience-item:hover, .education-item:hover {
+.experience-item:hover, .education-item:hover, .project-item:hover {
     padding-left: 1rem;
     background-color: rgba(255, 127, 80, 0.05);
     border-radius: 8px;
 }
 
-.experience-item:hover::before, .education-item:hover::before {
+.experience-item:hover::before, .education-item:hover::before, project-item:hover::before {
     content: '';
     position: absolute;
     left: 0;
