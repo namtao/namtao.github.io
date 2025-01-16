@@ -16,6 +16,11 @@
   --border-color: #404040;
 }
 
+@page {
+  margin: 15px 15px; /* Top-Bottom: 10px, Left-Right: 15px */
+}
+
+
 * {
   margin: 0;
   padding: 0;
