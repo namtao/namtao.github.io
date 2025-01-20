@@ -147,7 +147,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.skills-grid {
+/* .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1rem;
@@ -158,6 +158,21 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 5px;
   text-align: center;
+} */
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các kỹ năng xuống hàng khi không đủ không gian */
+  gap: 1rem; /* Khoảng cách giữa các kỹ năng */
+  justify-content: flex-start
+}
+
+.skill-item {
+  background-color: var(--bg-color);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-align: center;
+  flex-basis: calc(25% - 1rem); /* Điều chỉnh kích thước của mỗi kỹ năng, ví dụ 4 kỹ năng trên một hàng */
 }
 
 .project-links {
@@ -229,19 +244,49 @@ body {
     gap: 0.5rem;
   }
 
-  .contact-links {
+  /* .contact-links {
     flex-direction: column;
-  }
+  } */
 
-  .contact-link {
+  /* .contact-link {
     width: 100%;
     justify-content: center;
-  }
+  } */
 }
 
 @media print {
   .theme-toggle {
     display: none;
+  }
+
+  .skills-grid {
+    display: block; 
+    margin: 0; 
+    padding: 0;
+    text-align: center;
+  }
+
+  .skill-item {
+    display: inline-block;
+    width: calc(25% - 1rem);
+    min-width: 150px;
+    margin: 0.5rem 0; 
+    page-break-inside: avoid;
+  }
+
+  .contact-links {
+    display: block; /* Sử dụng block thay vì flexbox để dễ dàng kiểm soát việc in */
+    text-align: center; /* Căn giữa các phần tử trong dòng */
+    margin: 0; /* Loại bỏ margin để tiết kiệm không gian khi in */
+  }
+
+  .contact-link {
+    display: inline-block; /* Sử dụng inline-block để các phần tử hiển thị liên tiếp nếu có đủ không gian */
+    width: auto; /* Đảm bảo các phần tử có chiều rộng tự động */
+    margin: 0.5rem 0; /* Khoảng cách giữa các phần tử khi in */
+    border-radius: 10px; /* Có thể điều chỉnh kích thước bo góc nếu cần */
+    page-break-inside: avoid; /* Tránh cắt ngang phần tử khi in sang trang mới */
+    text-align: center; /* Căn giữa nội dung bên trong liên kết */
   }
 }
 
@@ -448,7 +493,7 @@ project-item:hover::before {
   height: 100%;
   top: 0;
   left: 0;
-  background: var(--primary-color);
+  /* background: var(--primary-color); */
   border-radius: inherit;
   opacity: 0;
   transform: scale(0.8);
