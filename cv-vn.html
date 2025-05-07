@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Nguyễn Văn Nam</title>
+    <style>
+        :root {
+            --primary-color: #4285F4;
+            /* Google Blue - màu mới */
+            --secondary-color: #34A853;
+            /* Google Green - màu mới */
+            --accent-color: #EA4335;
+            /* Google Red - màu mới */
+            --light-accent: #FBBC05;
+            /* Google Yellow - màu mới */
+            --background-color: #ffffff;
+            --text-color: #212121;
+            --section-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+            --highlight-bg: #e8f0fe;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--section-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 14px;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            text-transform: uppercase;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .intro-section {
+            background-color: var(--highlight-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .statement {
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-size: 16px;
+        }
+
+        .key-achievements {
+            background-color: var(--section-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .key-achievements h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .achievement-item {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .achievement-item:before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .skill-category {
+            margin-bottom: 15px;
+        }
+
+        .skill-category h4 {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .experience-item {
+            margin-bottom: 20px;
+            border-left: 2px solid var(--border-color);
+            padding-left: 15px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .experience-title {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .experience-company {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .experience-date {
+            color: var(--accent-color);
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .project-item {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .project-item h4 {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .project-date {
+            font-style: italic;
+            color: var(--accent-color);
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .education-item {
+            margin-bottom: 15px;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .education-institution {
+            font-weight: 600;
+        }
+
+        .education-degree {
+            color: var(--primary-color);
+        }
+
+        .results {
+            font-weight: 500;
+            margin-top: 5px;
+            color: var(--accent-color);
+        }
+
+        .download-instructions {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: var(--highlight-bg);
+            border-radius: 5px;
+        }
+
+        .soft-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .soft-skill-tag {
+            background-color: var(--highlight-bg);
+            color: var(--primary-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            display: inline-block;
+            border: 1px solid var(--primary-color);
+        }
+
+        .about-me {
+            background-color: var(--section-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-style: italic;
+            color: var(--secondary-color);
+            border-left: 4px solid var(--light-accent);
+        }
+
+        .keywords {
+            font-size: 13px;
+            color: #9e9e9e;
+            margin-top: 15px;
+            line-height: 1.4;
+        }
+
+        .target-position {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+
+            .download-instructions {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>NGUYỄN VĂN NAM</h1>
+            <h2>Software Engineer</h2>
+            <div class="contact-info">
+                <span>Hanoi, Vietnam</span>
+                <span>|</span>
+                <span>📱 0946-29-11-98</span>
+                <span>|</span>
+                <span>✉️ vannam.pxb@gmail.com</span>
+                <span>|</span>
+                <a href="https://www.linkedin.com/in/vannampxb/" target="_blank">LinkedIn</a>
+                <span>|</span>
+                <a href="https://github.com/namtao" target="_blank">Github</a>
+                <span>|</span>
+                <a href="https://namtao.github.io/" target="_blank">Website</a>
+            </div>
+        </header>
+
+        <section class="intro-section">
+            <!-- 7. Personal Statement ngắn gọn, mạnh mẽ -->
+            <div class="statement">
+                Kỹ sư phần mềm chuyên về phát triển các giải pháp số hóa tiên tiến và áp dụng AI cho doanh nghiệp.
+                Tôi có khả năng vượt trội trong việc chuyển đổi ý tưởng thành sản phẩm ứng dụng AI thực tế với hiệu suất
+                cao.
+            </div>
+
+            <p>Tôi là người đam mê công nghệ và đổi mới sáng tạo. Có kinh nghiệm chuyên về phát triển phần mềm,
+                quản lý dự án và ứng dụng AI/ML. Chuyên sâu trong xây dựng các hệ thống xử lý dữ liệu, số hóa tài liệu
+                và ứng dụng LLM (Large Language Model).</p>
+
+            <div class="key-achievements">
+                <h4>THÀNH TÍCH NỔI BẬT</h4>
+                <div class="achievement-item">
+                    Xây dựng hệ thống số hóa áp dụng AI/ML giúp tiết kiêm cho phí và giảm thời gian xử lý tài liệu
+                    lên đến 30%
+                </div>
+                <div class="achievement-item">
+                    Xây dựng thành công 5+ ứng dụng AI/ML trong thực tế, phục vụ hơn 50 người dùng
+                </div>
+                <div class="achievement-item">
+                    Phát triển hệ thống tìm kiếm dựa trên LLM, đạt độ chính xác 85%
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Kỹ năng chuyên môn</h3>
+            <div class="skills-list">
+                <div class="skill-category">
+                    <h4>Ngôn ngữ lập trình</h4>
+                    <p>Python (3+ năm)</p>
+                </div>
+                <div class="skill-category">
+                    <h4>AI/ML</h4>
+                    <p>OCR, LLM, Llamaindex, LightGBM, NRMS</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Database</h4>
+                    <p>SQL, MongoDB, Redis, Elasticsearch, Faiss</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Backend</h4>
+                    <p>FastAPI, REST API</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Tools & Infrastructure</h4>
+                    <p>Git, Docker, Linux, Cloud, Networking</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Thiết kế</h4>
+                    <p>Figma</p>
+                </div>
+            </div>
+
+            <!-- 8. Soft Skills -->
+            <h4 style="color: var(--secondary-color); margin-top: 20px; margin-bottom: 10px;">Kỹ năng mềm</h4>
+            <div class="soft-skills">
+                <span class="soft-skill-tag">Leadership</span>
+                <span class="soft-skill-tag">Problem-solving</span>
+                <span class="soft-skill-tag">Project Management</span>
+                <span class="soft-skill-tag">Teamwork</span>
+                <span class="soft-skill-tag">Communication</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Kinh nghiệm làm việc</h3>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-title">Quản trị hệ thống thông tin</span>
+                    <span class="experience-date">2020 - Hiện tại</span>
+                </div>
+                <div class="experience-company">Công ty Cổ phần Phát triển Công nghệ Hành chính ADDJ</div>
+
+                <div class="project-item">
+                    <h4>Xây dựng hệ thống gợi ý</h4>
+                    <div class="project-date">12/2024 - Hiện tại</div>
+                    <ul>
+                        <li>Phát triển hệ thống gợi ý thông minh dựa trên hành vi người dùng</li>
+                        <li>Công nghệ: Python, AI/ML, LightGBM, NRMS, Redis, Faiss, MongoDB, Elasticsearch, FastAPI</li>
+                        <li class="results">KPI: Đáp ứng được yêu cầu mà dự án đề ra</li>
+                    </ul>
+                </div>
+
+                <div class="project-item">
+                    <h4>Phát triển hệ thống tìm kiếm dựa trên LLM</h4>
+                    <div class="project-date">04/2024 - 10/2024</div>
+                    <ul>
+                        <li>Xây dựng hệ thống tìm kiếm thông minh sử dụng LLM cho dữ liệu tiếng Việt, phục vụ 50+ người
+                            dùng</li>
+                        <li>Công nghệ: Python, LLM, OCR, Llamaindex, AI/ML</li>
+                        <li class="results">KPI: Tiết kiệm 30% thời gian của người dùng</li>
+                    </ul>
+                </div>
+
+                <div class="project-item">
+                    <h4>Ứng dụng AI trong chuyển đổi số tài liệu</h4>
+                    <div class="project-date">12/2023 - 06/2024</div>
+                    <ul>
+                        <li>Phát triển hệ thống nhận diện và trích xuất thông tin từ tài liệu giấy</li>
+                        <li>Kết hợp LLM với OCR để nâng cao chất lượng bóc tách dữ liệu</li>
+                        <li class="results">KPI: Giảm 30% thời gian xử lý tài liệu</li>
+                    </ul>
+                </div>
+
+                <div class="project-item">
+                    <h4>Xây dựng hệ thống lưu trữ đám mây</h4>
+                    <div class="project-date">2023</div>
+                    <ul>
+                        <li>Triển khai NextCloud cho lưu trữ tài liệu và dữ liệu công ty, phục vụ 50+ nhân viên</li>
+                        <li>Quản lý vận hành và xử lý lỗi hệ thống</li>
+                        <li class="results">KPI: Tiết kiệm nhiều chi phí so với giải pháp đám mây thương
+                            mại</li>
+                    </ul>
+                </div>
+
+                <div class="project-item">
+                    <h4>Hệ thống Quản lý Công việc và Trang thiết bị</h4>
+                    <div class="project-date">2022</div>
+                    <ul>
+                        <li>Xây dựng hệ thống tự động theo dõi tiến độ dự án, quản lý gần 1000 trang thiết bị công ty
+                            trên nhiều địa
+                            điểm trong cả nước</li>
+                        <li class="results">KPI: Giảm 60% thời gian báo cáo, nâng cao 40% hiệu quả quản lý tài sản, giảm
+                            thiểu tối đa thiết bị thất lạc</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <span class="experience-title">Thực tập sinh</span>
+                    <span class="experience-date">2019 - 2020</span>
+                </div>
+                <div class="experience-company">Công ty bảo hiểm nhân thọ Fubon Việt Nam</div>
+                <p>Hỗ trợ phát triển các ứng dụng nội bộ và tham gia quy trình thử nghiệm phần mềm</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Dự án cá nhân</h3>
+
+            <div class="project-item">
+                <h4>Ứng dụng học tiếng Anh</h4>
+                <div class="project-date">2024</div>
+                <ul>
+                    <li>Tự động gửi từ vựng mới qua Telegram hàng ngày kèm phiên âm, dịch nghĩa, ví dụ, cách sử dụng
+                    </li>
+                    <li>Công nghệ: Python, TeleBot, LLM</li>
+                    <li class="results">Kết quả: Hỗ trợ việc học từ vựng với tính nhất quán cao
+                    </li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <h4>Ứng dụng tóm tắt tin tức</h4>
+                <div class="project-date">2024</div>
+                <ul>
+                    <li>Tự động tóm tắt bài báo từ các trang web bằng LLM</li>
+                    <li>Công nghệ: Python, TeleBot, LLM</li>
+                    <li class="results">Kết quả: Tiết kiệm thời gian đọc tin tức hàng ngày, xử lý 50+ bài báo/ngày</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Học vấn</h3>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <span class="education-institution">AI VIET NAM</span>
+                    <span class="education-date">2023 - Hiện tại</span>
+                </div>
+                <div class="education-degree">AI/ML Engineer</div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <span class="education-institution">Trung tâm Đào tạo Athena</span>
+                    <span class="education-date">2022 - 2023</span>
+                </div>
+                <div class="education-degree">An ninh mạng, Quản trị Linux</div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <span class="education-institution">Đại học Công nghiệp Hà Nội</span>
+                    <span class="education-date">2016 - 2020</span>
+                </div>
+                <div class="education-degree">Kỹ sư Kỹ thuật phần mềm</div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-header">
+                    <span class="education-institution">Viện Công Nghệ và Đào Tạo DEVMASTER</span>
+                    <span class="education-date">2019 - 2020</span>
+                </div>
+                <div class="education-degree">Lập trình viên Java</div>
+            </div>
+        </section>
+
+        <!-- 9. About Me section -->
+        <section class="section">
+            <h3 class="section-title">Về tôi</h3>
+            <div class="about-me">
+                <p>Ngoài công việc, tôi thích tham gia hoạt động và các sự kiện công nghệ để mở rộng
+                    mạng lưới quan hệ và học hỏi từ cộng đồng. Tôi cũng thường xuyên viết blog về AI/ML trên các nền
+                    tảng mạng xã hội hay Website chuyên tin công nghệ.</p>
+            </div>
+        </section>
+
+        <!-- 10. ATS Keywords -->
+        <!-- <div class="keywords">
+            #artificialintelligence #machinelearning #python #dataengineering #computervision #nlp #llm #elasticsearch
+            #fastapi #datascience #ocr #textextraction #cloudcomputing #docker #linux #teamleader #innovator
+            #problemsolver #agilescrum #pythondeveloper #mlops #fastapi #mongodb #redis
+        </div> -->
+    </div>
+</body>
+
+</html>
