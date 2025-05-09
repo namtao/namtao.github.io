@@ -22,7 +22,7 @@
 }
 
 body {
-    background-color: var(--section-bg);
+    /* background-color: var(--section-bg); */
     color: var(--text-color);
     line-height: 1.6;
     max-width: 850px;
@@ -64,18 +64,15 @@ h2 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
     font-size: 14px;
+    margin: -6px; /* chống đẩy lề ngoài */
 }
 
+.contact-info span,
 .contact-info a {
-    color: var(--primary-color);
-    text-decoration: none;
+    margin: 6px; /* tạo khoảng cách giữa các phần tử */
 }
 
-.contact-info a:hover {
-    text-decoration: underline;
-}
 
 .section {
     margin-bottom: 20px;
@@ -238,18 +235,20 @@ li {
 .soft-skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    margin: -6px; /* để bù phần margin con */
     margin-bottom: 15px;
 }
 
 .soft-skill-tag {
     background-color: var(--highlight-bg);
     color: var(--primary-color);
-    padding: 6px 12px;
+    padding: 6px 14px;
     border-radius: 20px;
     font-size: 13px;
     display: inline-block;
     border: 1px solid var(--primary-color);
+
+    margin: 6px; /* dùng margin thay vì gap */
 }
 
 .about-me {
@@ -280,7 +279,7 @@ li {
 }
 
 /* Print styles */
-@media print {
+/* @media print {
     body {
         padding: 0;
     }
@@ -293,4 +292,57 @@ li {
     .download-instructions {
         display: none;
     }
+} */
+
+@media print {
+    body {
+      margin: 0;
+      padding: 0;
+      font-size: 12pt;
+      line-height: 1.4;
+      color: #000;
+    }
+  
+    .container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+  
+    .cv {
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+  
+    .section,
+    .item {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+  
+    .title,
+    .subtitle {
+      color: black;
+    }
+  
+    /* Ẩn các thành phần không cần in (nếu có) */
+    .no-print,
+    .button,
+    a[href^="http"]::after {
+      display: none !important;
+    }
+  }
+  
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 15px;
 }
+.skill-category {
+    width: 45%; /* hoặc 48% để 2 cột */
+}
+
+
+
