@@ -25,5 +25,5 @@ async def html_to_pdf(input_html_path, output_pdf_path):
 
 
 # Gọi hàm
-asyncio.run(html_to_pdf("cv-vn.html", "CV_NguyenVanNam_VN.pdf"))
-asyncio.run(html_to_pdf("cv-en.html", "CV_NguyenVanNam_EN.pdf"))
+asyncio.run(html_to_pdf("cv-vn.html", "CV_NguyenVanNam_VN_Engineer.pdf"))
+# asyncio.run(html_to_pdf("cv-en.html", "CV_NguyenVanNam_EN.pdf"))
