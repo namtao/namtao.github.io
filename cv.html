@@ -18,106 +18,107 @@
     margin: 36px auto;
     background: #fff;
     box-shadow: 0 4px 24px rgba(0,0,0,0.13);
-    display: grid;
-    grid-template-columns: 215px 1fr;
-    min-height: 1120px;
   }
 
-  /* SIDEBAR — kéo dài full chiều cao grid */
-  .sidebar {
+  /* ── HEADER ── */
+  .header {
     background: #3d5068;
-    color: #c9d4df;
-    padding: 36px 20px;
-    /* stretch full height kể cả khi main dài hơn */
-    align-self: stretch;
+    padding: 30px 40px 24px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
-  .sidebar .name {
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .header-name {
     font-family: 'Libre Baskerville', serif;
-    font-size: 16pt;
+    font-size: 24pt;
     font-weight: 700;
     color: #fff;
-    line-height: 1.25;
-    margin-bottom: 4px;
+    line-height: 1.15;
   }
-  .sidebar .tagline {
-    font-size: 8pt;
+  .header-tagline {
+    font-size: 9pt;
     color: #8fa8be;
     text-transform: uppercase;
-    letter-spacing: 1.8px;
-    margin-bottom: 28px;
+    letter-spacing: 2.5px;
+    margin-top: 2px;
   }
-  .sidebar-section { margin-bottom: 24px; }
-  .sidebar-title {
-    font-size: 7.5pt;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #8fa8be;
-    border-bottom: 1px solid #4e6278;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
+  .contact-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
   }
   .contact-item {
-    font-size: 8.5pt;
+    font-size: 9pt;
     color: #c9d4df;
-    margin-bottom: 5px;
-    word-break: break-all;
     display: flex;
+    align-items: center;
     gap: 6px;
-    align-items: flex-start;
   }
-  .contact-item .icon { opacity: 0.7; flex-shrink: 0; }
+  .contact-item .icon { opacity: 0.65; }
 
-  .skill-category { margin-bottom: 9px; }
-  .skill-cat-name {
-    font-size: 8.5pt;
-    font-weight: 700;
-    color: #e2eaf1;
-    margin-bottom: 4px;
-  }
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
-  .tag {
-    background: #4e6278;
-    color: #bfcfdd;
-    font-size: 7.5pt;
-    padding: 2px 7px;
-    border-radius: 3px;
-  }
-
-  .edu-item { margin-bottom: 10px; }
-  .edu-degree { font-size: 8.5pt; font-weight: 700; color: #e2eaf1; line-height: 1.4; }
-  .edu-school { font-size: 8pt; color: #9ab0c4; margin-top: 1px; }
-  .edu-date { font-size: 7.5pt; color: #7a96ad; margin-top: 1px; }
-
-  .cert-item { font-size: 8pt; color: #c9d4df; margin-bottom: 6px; line-height: 1.5; }
-
-  /* MAIN */
-  .main { padding: 36px 36px 36px 30px; }
-
-  .main-section { margin-bottom: 22px; }
-  .main-title {
-    font-size: 7.5pt;
+  /* ── SECTION TITLES ── */
+  .section { padding: 0 40px; margin-bottom: 20px; }
+  .section:first-of-type { margin-top: 26px; }
+  .section-title {
+    font-size: 8pt;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2.5px;
     color: #3d5068;
+    padding-bottom: 5px;
     border-bottom: 2px solid #3d5068;
-    padding-bottom: 4px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
-  .summary p { font-size: 10pt; color: #444; line-height: 1.7; }
+  /* ── SUMMARY ── */
+  .summary-text {
+    font-size: 10pt;
+    color: #444;
+    line-height: 1.72;
+  }
 
+  /* ── SKILLS ── */
+  .skills-flow {
+    font-size: 9.5pt;
+    color: #444;
+    line-height: 1.85;
+  }
+  .skills-flow .sk-label {
+    font-weight: 700;
+    color: #3d5068;
+  }
+  .skills-flow .sk-sep {
+    display: inline-block;
+    width: 1px;
+    height: 11px;
+    background: #c0c9d4;
+    margin: 0 12px;
+    vertical-align: -1px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── EXPERIENCE ── */
   .job { margin-bottom: 16px; }
+  .job:last-child { margin-bottom: 0; }
   .job-top {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px;
   }
   .job-company {
     font-family: 'Libre Baskerville', serif;
     font-weight: 700;
-    font-size: 10.5pt;
+    font-size: 11pt;
     color: #1e2d3d;
   }
   .job-location { font-size: 8.5pt; color: #7a96ad; }
@@ -125,18 +126,22 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 6px;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 5px;
   }
   .job-title { font-size: 9.5pt; color: #3d6e99; font-style: italic; }
   .job-date {
     font-size: 8.5pt;
-    color: #8fa8be;
-    background: #eef2f6;
-    padding: 1px 8px;
+    color: #fff;
+    background: #3d5068;
+    padding: 1px 10px;
     border-radius: 3px;
     white-space: nowrap;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
-  .job ul { padding-left: 15px; }
+  .job ul { padding-left: 16px; }
   .job ul li {
     font-size: 9.5pt;
     color: #333;
@@ -145,164 +150,191 @@
   }
   .job ul li strong { color: #1e2d3d; font-weight: 600; }
 
-  .proj-item { margin-bottom: 6px; font-size: 9.5pt; line-height: 1.55; }
+  /* ── EDUCATION — compact row ── */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2px 20px;
+    align-items: baseline;
+  }
+  .edu-row {
+    display: contents;
+  }
+  .edu-left {
+    font-size: 9.5pt;
+    line-height: 1.6;
+  }
+  .edu-left strong {
+    font-weight: 600;
+    color: #1e2d3d;
+  }
+  .edu-left span {
+    color: #666;
+    font-size: 9pt;
+  }
+  .edu-date {
+    font-size: 8.5pt;
+    color: #8fa8be;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  /* ── PROJECTS ── */
+  .proj-item { margin-bottom: 5px; font-size: 9.5pt; line-height: 1.55; }
   .proj-item strong { color: #1e2d3d; }
   .proj-item span { color: #555; }
 
+  /* ── BOTTOM ROW ── */
+  .bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+  }
+  .cert-item { font-size: 9pt; color: #444; margin-bottom: 5px; line-height: 1.5; }
+
+  /* ── FOOTER ACCENT ── */
+  .footer-accent {
+    height: 5px;
+    background: #3d5068;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── PRINT ── */
   @media print {
     body { background: #fff; }
-    .page {
-      margin: 0;
-      box-shadow: none;
-      max-width: 100%;
-      /* sidebar màu xanh phủ toàn bộ chiều cao khi in */
-      min-height: 100vh;
-    }
-    .sidebar {
-      /* In màu nền sidebar */
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
+    .page { margin: 0; box-shadow: none; max-width: 100%; }
+    .job { break-inside: avoid; }
+    .section { break-inside: avoid; }
   }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- SIDEBAR -->
-  <div class="sidebar">
-    <div class="name">Van Nam<br>Nguyen</div>
-    <div class="tagline">Software Engineer</div>
-
-    <div class="sidebar-section">
-      <div class="sidebar-title">Contact</div>
-      <div class="contact-item"><span class="icon">📍</span><span>Hanoi, Vietnam</span></div>
-      <div class="contact-item"><span class="icon">✉️</span><span>vannam.pxb@gmail.com</span></div>
-      <div class="contact-item"><span class="icon">📞</span><span>+84 946 29 11 98</span></div>
-    </div>
-
-    <div class="sidebar-section">
-      <div class="sidebar-title">Technical Skills</div>
-      <div class="skill-category">
-        <div class="skill-cat-name">Languages</div>
-        <div class="skill-tags"><span class="tag">Python</span><span class="tag">SQL</span></div>
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-row">
+      <div>
+        <div class="header-name">Van Nam Nguyen</div>
+        <div class="header-tagline">Software Engineer</div>
       </div>
-      <div class="skill-category">
-        <div class="skill-cat-name">Backend & APIs</div>
-        <div class="skill-tags"><span class="tag">FastAPI</span><span class="tag">Flask</span><span class="tag">REST API</span><span class="tag">ETL/ELT</span></div>
+      <div class="contact-col">
+        <div class="contact-item"><span>Hanoi, Vietnam</span><span class="icon">📍</span></div>
+        <div class="contact-item"><span>vannam.pxb@gmail.com</span><span class="icon">✉️</span></div>
+        <div class="contact-item"><span>+84 946 29 11 98</span><span class="icon">📞</span></div>
       </div>
-      <div class="skill-category">
-        <div class="skill-cat-name">Databases</div>
-        <div class="skill-tags"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">Redis</span><span class="tag">Elasticsearch</span><span class="tag">SQL Server</span></div>
-      </div>
-      <div class="skill-category">
-        <div class="skill-cat-name">AI & Search</div>
-        <div class="skill-tags"><span class="tag">LLM</span><span class="tag">RAG</span><span class="tag">Vector Search</span><span class="tag">OCR</span><span class="tag">NLP</span><span class="tag">AI Agents</span></div>
-      </div>
-      <div class="skill-category">
-        <div class="skill-cat-name">DevOps & Cloud</div>
-        <div class="skill-tags"><span class="tag">Docker</span><span class="tag">Linux</span><span class="tag">Git</span></div>
-      </div>
-    </div>
-
-    <div class="sidebar-section">
-      <div class="sidebar-title">Education</div>
-      <div class="edu-item">
-        <div class="edu-degree">AI/ML Engineer</div>
-        <div class="edu-school">AI Vietnam</div>
-        <div class="edu-date">Dec 2023 – Jun 2025</div>
-      </div>
-      <div class="edu-item">
-        <div class="edu-degree">Cybersecurity & Linux</div>
-        <div class="edu-school">Athena Training Center</div>
-        <div class="edu-date">Jun 2022 – Oct 2023</div>
-      </div>
-      <div class="edu-item">
-        <div class="edu-degree">B.Eng. Software Engineering</div>
-        <div class="edu-school">Hanoi University of Industry</div>
-        <div class="edu-date">Jun 2016 – Jun 2020</div>
-      </div>
-    </div>
-
-    <div class="sidebar-section">
-      <div class="sidebar-title">Certifications</div>
-      <div class="cert-item">AngelHack HackHCMC – Certificate of Participation</div>
-      <div class="cert-item">AI Vietnam – AI/ML Engineer Certificate</div>
     </div>
   </div>
 
-  <!-- MAIN -->
-  <div class="main">
-
-    <div class="main-section summary">
-      <div class="main-title">Professional Summary</div>
-      <p>Software Engineer with 5+ years of experience designing and building backend systems, internal platforms, and AI-integrated applications. Proven ability to take products from idea to deployment — including document intelligence systems, recommendation engines, and search platforms. Strong foundation in Python, databases, and cloud infrastructure, with hands-on experience applying LLMs and AI agents to real-world business problems.</p>
-    </div>
-
-    <div class="main-section">
-      <div class="main-title">Experience</div>
-
-      <div class="job">
-        <div class="job-top">
-          <span class="job-company">ECOBA VN JSC</span>
-          <span class="job-location">Hanoi, Vietnam</span>
-        </div>
-        <div class="job-meta">
-          <span class="job-title">Software Engineer</span>
-          <span class="job-date">Sep 2025 – Present</span>
-        </div>
-        <ul>
-          <li>Solely responsible for all software-related work — covering <strong>frontend</strong>, <strong>backend</strong>, and <strong>database</strong>.</li>
-          <li>Built and maintained <strong>internal web applications</strong> end-to-end for business operations.</li>
-          <li>Integrated third-party platforms including <strong>VNPT eContracts</strong>, <strong>Microsoft 365</strong>, and <strong>SAP</strong>.</li>
-          <li><strong>Drove</strong> the direction and roadmap for <strong>internal tooling</strong>, delivering software solutions across departments.</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <div class="job-top">
-          <span class="job-company">ADDJ Technology Development JSC</span>
-          <span class="job-location">Hanoi, Vietnam</span>
-        </div>
-        <div class="job-meta">
-          <span class="job-title">Software Engineer / Head of Digital Solutions</span>
-          <span class="job-date">Jun 2020 – Sep 2025</span>
-        </div>
-        <ul>
-          <li>Built an <strong>AI-powered document search platform</strong> using <strong>LLMs</strong> and <strong>vector search</strong> across thousands of internal documents.</li>
-          <li>Developed an <strong>OCR-based extraction system</strong> to digitize and structure data from scanned documents.</li>
-          <li>Designed and implemented a <strong>data warehouse</strong> to centralize company data for reporting and analytics.</li>
-          <li>Created a <strong>smart recommendation engine</strong> leveraging user behavior data to personalize content delivery.</li>
-          <li>Deployed <strong>NextCloud storage</strong> serving 50+ employees with access control and uptime management.</li>
-          <li>Led large-scale <strong>document digitization projects</strong>, defining workflows, quality standards, and timelines.</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <div class="job-top">
-          <span class="job-company">Fubon Life Vietnam Insurance Co., Ltd.</span>
-          <span class="job-location">Hanoi, Vietnam</span>
-        </div>
-        <div class="job-meta">
-          <span class="job-title">Software Development Intern</span>
-          <span class="job-date">Sep 2019 – Mar 2020</span>
-        </div>
-        <ul>
-          <li>Developed and maintained internal web applications using <strong>Java</strong> and <strong>Python</strong>.</li>
-          <li>Implemented new features and resolved bugs for business operations tools used across departments.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="main-section">
-      <div class="main-title">Personal Projects</div>
-      <div class="proj-item"><strong>English Learning App</strong> — <span>AI-powered daily vocabulary push notifications with personalized learning suggestions (Python, SQLite, Cron Jobs)</span></div>
-      <div class="proj-item"><strong>News Summarization App</strong> — <span>AI-driven daily news aggregator and summarizer across multiple domains (Python, NLP, LLM)</span></div>
-      <div class="proj-item"><strong>Japanese LMS Web App</strong> — <span>Full-stack learning management system for Japanese language study, built with Flask</span></div>
-      <div class="proj-item"><strong>Document Digitization Platform</strong> — <span>Web app for document scanning, OCR extraction, and PDF compression</span></div>
-    </div>
-
+  <!-- SUMMARY -->
+  <div class="section" style="margin-top:26px">
+    <div class="section-title">Professional Summary</div>
+    <p class="summary-text">Software Engineer with 5+ years of experience designing and building backend systems, internal platforms, and AI-integrated applications. Proven ability to take products from idea to deployment — including document intelligence systems, recommendation engines, and search platforms. Strong foundation in Python, databases, and cloud infrastructure, with hands-on experience applying LLMs and AI agents to real-world business problems.</p>
   </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-flow">
+      <span class="sk-label">Languages:</span> Python, SQL<span class="sk-sep"></span><span class="sk-label">Backend & APIs:</span> FastAPI, Flask, REST API, ETL/ELT<span class="sk-sep"></span><span class="sk-label">Databases:</span> PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch, SQL Server<span class="sk-sep"></span><span class="sk-label">AI & Search:</span> LLM, RAG, Vector Search, OCR, NLP, AI Agents<span class="sk-sep"></span><span class="sk-label">DevOps:</span> Docker, Linux, Git
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Experience</div>
+
+    <div class="job">
+      <div class="job-top">
+        <span class="job-company">ECOBA VN JSC</span>
+        <span class="job-location">Hanoi, Vietnam</span>
+      </div>
+      <div class="job-meta">
+        <span class="job-title">Software Engineer</span>
+        <span class="job-date">Sep 2025 – Present</span>
+      </div>
+      <ul>
+        <li>Solely responsible for all software-related work — covering <strong>frontend</strong>, <strong>backend</strong>, and <strong>database</strong>.</li>
+        <li>Built and maintained <strong>internal web applications</strong> end-to-end for business operations.</li>
+        <li>Integrated third-party platforms including <strong>VNPT eContracts</strong>, <strong>Microsoft 365</strong>, and <strong>SAP</strong>.</li>
+        <li><strong>Drove</strong> the direction and roadmap for <strong>internal tooling</strong>, delivering software solutions across departments.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <span class="job-company">ADDJ Technology Development JSC</span>
+        <span class="job-location">Hanoi, Vietnam</span>
+      </div>
+      <div class="job-meta">
+        <span class="job-title">Software Engineer / Head of Digital Solutions</span>
+        <span class="job-date">Jun 2020 – Sep 2025</span>
+      </div>
+      <ul>
+        <li>Built an <strong>AI-powered document search platform</strong> using <strong>LLMs</strong> and <strong>vector search</strong> across thousands of internal documents.</li>
+        <li>Developed an <strong>OCR-based extraction system</strong> to digitize and structure data from scanned documents.</li>
+        <li>Designed and implemented a <strong>data warehouse</strong> to centralize company data for reporting and analytics.</li>
+        <li>Created a <strong>smart recommendation engine</strong> leveraging user behavior data to personalize content delivery.</li>
+        <li>Deployed <strong>NextCloud storage</strong> serving 50+ employees with access control and uptime management.</li>
+        <li>Led large-scale <strong>document digitization projects</strong>, defining workflows, quality standards, and timelines.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <span class="job-company">Fubon Life Vietnam Insurance Co., Ltd.</span>
+        <span class="job-location">Hanoi, Vietnam</span>
+      </div>
+      <div class="job-meta">
+        <span class="job-title">Software Development Intern</span>
+        <span class="job-date">Sep 2019 – Mar 2020</span>
+      </div>
+      <ul>
+        <li>Developed and maintained internal web applications using <strong>Java</strong> and <strong>Python</strong>.</li>
+        <li>Implemented new features and resolved bugs for business operations tools used across departments.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-title">Personal Projects</div>
+    <div class="proj-item"><strong>English Learning App</strong> — <span>AI-powered daily vocabulary push notifications with personalized learning suggestions (Python, SQLite, Cron Jobs)</span></div>
+    <div class="proj-item"><strong>News Summarization App</strong> — <span>AI-driven daily news aggregator and summarizer across multiple domains (Python, NLP, LLM)</span></div>
+    <div class="proj-item"><strong>Japanese LMS Web App</strong> — <span>Full-stack learning management system for Japanese language study, built with Flask</span></div>
+    <div class="proj-item"><strong>Document Digitization Platform</strong> — <span>Web app for document scanning, OCR extraction, and PDF compression</span></div>
+  </div>
+
+  <!-- EDUCATION + CERTS -->
+  <div class="section" style="padding-bottom: 30px;">
+    <div class="bottom-row">
+      <div>
+        <div class="section-title">Education</div>
+        <div class="edu-grid">
+          <div class="edu-row">
+            <div class="edu-left"><strong>AI/ML Engineer</strong> — <span>AI Vietnam</span></div>
+            <div class="edu-date">Dec 2023 – Jun 2025</div>
+          </div>
+          <div class="edu-row">
+            <div class="edu-left"><strong>Cybersecurity & Linux</strong> — <span>Athena Training Center</span></div>
+            <div class="edu-date">Jun 2022 – Oct 2023</div>
+          </div>
+          <div class="edu-row">
+            <div class="edu-left"><strong>B.Eng. Software Engineering</strong> — <span>Hanoi University of Industry</span></div>
+            <div class="edu-date">Jun 2016 – Jun 2020</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-title">Certifications</div>
+        <div class="cert-item">AngelHack HackHCMC – Certificate of Participation</div>
+        <div class="cert-item">AI Vietnam – AI/ML Engineer Certificate</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-accent"></div>
 </div>
 </body>
 </html>
