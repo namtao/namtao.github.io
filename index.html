@@ -15,32 +15,19 @@
       box-sizing: border-box;
     }
 
-    html,
-    body {
-      height: 100%;
-      overflow: hidden;
-    }
-
     body {
       font-family: 'Source Sans 3', sans-serif;
       font-size: 10pt;
       color: #111;
       background: #bebebe;
       line-height: 1.5;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 44px 0;
     }
 
     .page {
-      width: 880px;
-      max-width: 100%;
+      max-width: 880px;
+      margin: 44px auto;
       background: #fff;
       box-shadow: 0 12px 48px rgba(0, 0, 0, 0.25);
-      display: flex;
-      flex-direction: column;
-      height: calc(100vh - 88px);
     }
 
     /* ── HEADER ── */
@@ -107,9 +94,6 @@
       grid-template-columns: 228px 1fr;
       border-top: 1px solid #ddd;
       margin-top: 2px;
-      flex: 1;
-      min-height: 0;
-      overflow: hidden;
     }
 
     /* ── SIDEBAR ── */
@@ -190,7 +174,6 @@
     /* ── MAIN ── */
     .main {
       padding: 28px 38px 36px;
-      overflow-y: auto;
     }
 
     .main-section {
@@ -324,28 +307,6 @@
       line-height: 1.5;
     }
 
-    /* ── CV END MARKER ── */
-    .cv-end {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 28px 0 36px;
-    }
-
-    .cv-end-line {
-      flex: 1;
-      height: 1px;
-      background: #ddd;
-    }
-
-    .cv-end-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: #ccc;
-      flex-shrink: 0;
-    }
-
     /* ── FOOTER ── */
     .footer-accent {
       height: 5px;
@@ -356,32 +317,14 @@
 
     /* ── PRINT ── */
     @media print {
-
-      html,
-      body {
-        height: auto;
-        overflow: visible;
-        padding: 0;
-      }
-
       body {
         background: #fff;
-        display: block;
       }
 
       .page {
-        width: 100%;
-        height: auto;
+        margin: 0;
         box-shadow: none;
-      }
-
-      .body {
-        overflow: visible;
-        height: auto;
-      }
-
-      .main {
-        overflow: visible;
+        max-width: 100%;
       }
 
       .job {
@@ -613,12 +556,6 @@
                 summaries, and delivers formatted reports via email (Python, PostgreSQL, LLM, Cron)</div>
             </div>
           </div>
-        </div>
-
-        <div class="cv-end">
-          <span class="cv-end-line"></span>
-          <span class="cv-end-dot"></span>
-          <span class="cv-end-line"></span>
         </div>
 
       </main>
