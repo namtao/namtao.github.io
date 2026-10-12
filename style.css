@@ -334,7 +334,33 @@ body {
     max-width: 100%;
   }
 
+  /* slightly tighter rhythm on paper keeps the CV to two pages */
+  @page {
+    margin: 10mm 0;
+  }
+
+  .summary-text {
+    line-height: 1.6;
+  }
+
+  .main-section {
+    margin-bottom: 20px;
+  }
+
   .job {
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+  }
+
+  /* let long jobs flow across pages, but never strand a heading or split a bullet/card */
+  .main-title,
+  .job-head,
+  .job-sub {
+    break-after: avoid;
+  }
+
+  .job ul li,
+  .proj-item {
     break-inside: avoid;
   }
 }
