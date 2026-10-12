@@ -338,3 +338,11 @@ body {
     break-inside: avoid;
   }
 }
+
+.proj-name a,
+.proj-desc a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #ccc;
+  text-underline-offset: 2px;
+}
